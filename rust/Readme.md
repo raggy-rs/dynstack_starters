@@ -3,8 +3,8 @@ Template for a rust based solver.
 
 Prerequisits:
 -------------
-[rust]{https://rustup.rs/}
-[protoc](https://developers.google.com/protocol-buffers/docs/downloads) must be in the rust directory.
+* [rust](https://rustup.rs/)
+* [protoc](https://developers.google.com/protocol-buffers/docs/downloads) must be in the rust directory.
 
 Building:
 ---------

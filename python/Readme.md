@@ -3,11 +3,11 @@ Template for a python based solver.
 
 Prerequisits:
 -------------
-[python]{https://www.python.org/}
-[pip]{https://pypi.org/} or [conda]{https://www.anaconda.com/distribution/}
-[protobuf]{https://pypi.org/project/protobuf/}
-[pyzmq]{https://pypi.org/project/pyzmq/}
-[protoc](https://developers.google.com/protocol-buffers/docs/downloads)
+* [python](https://www.python.org/)
+* [pip](https://pypi.org/) or [conda](https://www.anaconda.com/distribution/)
+* [protobuf](https://pypi.org/project/protobuf/)
+* [pyzmq](https://pypi.org/project/pyzmq/)
+* [protoc](https://developers.google.com/protocol-buffers/docs/downloads)
 
 Building:
 ---------
