@@ -1,0 +1,56 @@
+syntax = "proto2";
+package DynStacking.DataModel;
+
+message Block {
+optional int32 Id = 1 [default = 0];
+optional TimeStamp Release = 2;
+optional TimeStamp Due = 3;
+optional bool Ready = 4 [default = false];
+}
+message Crane {
+optional int32 Id = 1 [default = 0];
+optional int32 LocationId = 2 [default = 0];
+optional Block Load = 3;
+optional CraneSchedule Schedule = 4;
+optional double GirderPosition = 5 [default = 0];
+optional double HoistPosition = 6 [default = 0];
+}
+message CraneMove {
+optional int32 BlockId = 1;
+optional int32 SourceId = 2;
+optional int32 TargetId = 3 [default = 0];
+optional int32 Sequence = 4 [default = 0];
+}
+message CraneSchedule {
+repeated CraneMove Moves = 1;
+optional int32 SequenceNr = 2 [default = 0];
+}
+message Handover {
+optional int32 Id = 1 [default = 0];
+optional bool Ready = 2 [default = false];
+optional Block Block = 3;
+}
+message Performance {
+optional int32 CraneManipulations = 1 [default = 0];
+optional double ServiceLevelMean = 2 [default = 0];
+optional double LeadTimeMean = 3 [default = 0];
+optional int32 DeliveredBlocks = 4 [default = 0];
+optional int32 TotalBlocksOnTime = 5 [default = 0];
+optional double BlockedArrivalTime = 6 [default = 0];
+}
+message Stack {
+optional int32 Id = 1 [default = 0];
+optional int32 MaxHeight = 2 [default = 0];
+repeated Block BottomToTop = 3;
+}
+message TimeStamp {
+optional int64 MilliSeconds = 1 [default = 0];
+}
+message World {
+optional TimeStamp Now = 1;
+optional Stack Production = 2;
+repeated Stack Buffers = 3;
+optional Handover Handover = 4;
+optional Crane Crane = 5;
+optional Performance KPIs = 6;
+} 
