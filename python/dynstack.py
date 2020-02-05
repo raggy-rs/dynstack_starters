@@ -5,9 +5,24 @@ import zmq
 import sys
 
 def optimize_crane_schedule(world):
-    crane_schedule = data_model_pb2.CraneSchedule()
-    print(world)
-    return crane_schedule
+    
+    if len(world.Crane.Schedule.Moves) > 0:
+        print("existing")
+        return None
+    schedule = data_model_pb2.CraneSchedule()
+    if len(world.Production.BottomToTop) > 0:
+        block = world.Production.BottomToTop[-1]
+        print("production", block)
+        for buf in world.Buffers:
+            if buf.MaxHeight > len(buf.BottomToTop):
+                print("free", buf)
+                mov = schedule.Moves.add()
+                mov.BlockId = block.Id
+                mov.SourceId = world.Production.Id
+                mov.TargetId = buf.Id
+                return schedule
+
+    return None
 
 if __name__ == "__main__":
     if len(sys.argv)!= 4:
@@ -31,7 +46,7 @@ if __name__ == "__main__":
         world.ParseFromString(msg)
         
         crane_schedule = optimize_crane_schedule(world)
-        if crane_schedule.Moves:
+        if crane_schedule:
             crane_schedule.SequenceNr = seq_nr
             seq_nr += 1
             msg = crane_schedule.SerializeToString()

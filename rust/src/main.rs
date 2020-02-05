@@ -25,7 +25,7 @@ fn main() {
         }
         match protobuf::parse_from_bytes::<data_model::World>(&msg) {
             Ok(world) => {
-                println!("{:?}", world);
+                //println!("{:?}", world);
 
                 if let Some(new_schedule) = optimize_crane_schedule(&world) {
                     let message = new_schedule.write_to_bytes().expect("Could not serialize!");
@@ -38,7 +38,25 @@ fn main() {
 }
 
 fn optimize_crane_schedule(world: &data_model::World) -> Option<data_model::CraneSchedule> {
-    // TODO
+    if !world.get_Crane().get_Schedule().get_Moves().is_empty() {
+        return None;
+    }
+    if let Some(block) = world.get_Production().get_BottomToTop().last() {
+        if let Some(free) = world
+            .get_Buffers()
+            .iter()
+            .find(|b| (b.get_MaxHeight() as usize) > b.get_BottomToTop().len())
+        {
+            let mut mov = data_model::CraneMove::new();
+            mov.set_BlockId(block.get_Id());
+            mov.set_SourceId(world.get_Production().get_Id());
+            mov.set_TargetId(free.get_Id());
 
+            schedule.mut_Moves().push(mov);
+            schedule.set_SequenceNr(1);
+            println!("{:?}", schedule);
+            return Some(schedule);
+        }
+    }
     None
 }
