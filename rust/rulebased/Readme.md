@@ -1,4 +1,4 @@
-Template for a rust based solver.
+Template for a any solver written in rust.
 ================================
 
 Prerequisits:
