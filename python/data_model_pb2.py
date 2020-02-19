@@ -18,9 +18,9 @@ _sym_db = _symbol_database.Default()
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='data_model.proto',
   package='DynStacking.DataModel',
-  syntax='proto2',
+  syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\x10\x64\x61ta_model.proto\x12\x15\x44ynStacking.DataModel\"\x8e\x01\n\x05\x42lock\x12\r\n\x02Id\x18\x01 \x01(\x05:\x01\x30\x12\x31\n\x07Release\x18\x02 \x01(\x0b\x32 .DynStacking.DataModel.TimeStamp\x12-\n\x03\x44ue\x18\x03 \x01(\x0b\x32 .DynStacking.DataModel.TimeStamp\x12\x14\n\x05Ready\x18\x04 \x01(\x08:\x05\x66\x61lse\"\xc6\x01\n\x05\x43rane\x12\r\n\x02Id\x18\x01 \x01(\x05:\x01\x30\x12\x15\n\nLocationId\x18\x02 \x01(\x05:\x01\x30\x12*\n\x04Load\x18\x03 \x01(\x0b\x32\x1c.DynStacking.DataModel.Block\x12\x36\n\x08Schedule\x18\x04 \x01(\x0b\x32$.DynStacking.DataModel.CraneSchedule\x12\x19\n\x0eGirderPosition\x18\x05 \x01(\x01:\x01\x30\x12\x18\n\rHoistPosition\x18\x06 \x01(\x01:\x01\x30\"X\n\tCraneMove\x12\x0f\n\x07\x42lockId\x18\x01 \x01(\x05\x12\x10\n\x08SourceId\x18\x02 \x01(\x05\x12\x13\n\x08TargetId\x18\x03 \x01(\x05:\x01\x30\x12\x13\n\x08Sequence\x18\x04 \x01(\x05:\x01\x30\"W\n\rCraneSchedule\x12/\n\x05Moves\x18\x01 \x03(\x0b\x32 .DynStacking.DataModel.CraneMove\x12\x15\n\nSequenceNr\x18\x02 \x01(\x05:\x01\x30\"\\\n\x08Handover\x12\r\n\x02Id\x18\x01 \x01(\x05:\x01\x30\x12\x14\n\x05Ready\x18\x02 \x01(\x08:\x05\x66\x61lse\x12+\n\x05\x42lock\x18\x03 \x01(\x0b\x32\x1c.DynStacking.DataModel.Block\"\x98\x02\n\x0bPerformance\x12\x1d\n\x12\x43raneManipulations\x18\x01 \x01(\x05:\x01\x30\x12\x1b\n\x10ServiceLevelMean\x18\x02 \x01(\x01:\x01\x30\x12\x17\n\x0cLeadTimeMean\x18\x03 \x01(\x01:\x01\x30\x12\x1a\n\x0f\x44\x65liveredBlocks\x18\x04 \x01(\x05:\x01\x30\x12\x1c\n\x11TotalBlocksOnTime\x18\x05 \x01(\x05:\x01\x30\x12\x1d\n\x12\x42lockedArrivalTime\x18\x06 \x01(\x01:\x01\x30\x12\x18\n\rTardinessMean\x18\x07 \x01(\x01:\x01\x30\x12 \n\x15\x42ufferUtilizationMean\x18\x08 \x01(\x01:\x01\x30\x12\x1f\n\x14\x43raneUtilizationMean\x18\t \x01(\x01:\x01\x30\"_\n\x05Stack\x12\r\n\x02Id\x18\x01 \x01(\x05:\x01\x30\x12\x14\n\tMaxHeight\x18\x02 \x01(\x05:\x01\x30\x12\x31\n\x0b\x42ottomToTop\x18\x03 \x03(\x0b\x32\x1c.DynStacking.DataModel.Block\"$\n\tTimeStamp\x12\x17\n\x0cMilliSeconds\x18\x01 \x01(\x03:\x01\x30\"a\n\rUncertainties\x12\x18\n\x10\x41rrivalIntervals\x18\x01 \x03(\x01\x12\x16\n\x0e\x43raneMoveTimes\x18\x02 \x03(\x01\x12\x1e\n\x16HandoverReadyIntervals\x18\x03 \x03(\x01\"\xe8\x02\n\x05World\x12-\n\x03Now\x18\x01 \x01(\x0b\x32 .DynStacking.DataModel.TimeStamp\x12\x30\n\nProduction\x18\x02 \x01(\x0b\x32\x1c.DynStacking.DataModel.Stack\x12-\n\x07\x42uffers\x18\x03 \x03(\x0b\x32\x1c.DynStacking.DataModel.Stack\x12\x31\n\x08Handover\x18\x04 \x01(\x0b\x32\x1f.DynStacking.DataModel.Handover\x12+\n\x05\x43rane\x18\x05 \x01(\x0b\x32\x1c.DynStacking.DataModel.Crane\x12\x30\n\x04KPIs\x18\x06 \x01(\x0b\x32\".DynStacking.DataModel.Performance\x12=\n\x0fObservationData\x18\x07 \x01(\x0b\x32$.DynStacking.DataModel.Uncertainties')
+  serialized_pb=_b('\n\x10\x64\x61ta_model.proto\x12\x15\x44ynStacking.DataModel\"\x84\x01\n\x05\x42lock\x12\n\n\x02Id\x18\x01 \x01(\x05\x12\x31\n\x07Release\x18\x02 \x01(\x0b\x32 .DynStacking.DataModel.TimeStamp\x12-\n\x03\x44ue\x18\x03 \x01(\x0b\x32 .DynStacking.DataModel.TimeStamp\x12\r\n\x05Ready\x18\x04 \x01(\x08\"\xba\x01\n\x05\x43rane\x12\n\n\x02Id\x18\x01 \x01(\x05\x12\x12\n\nLocationId\x18\x02 \x01(\x05\x12*\n\x04Load\x18\x03 \x01(\x0b\x32\x1c.DynStacking.DataModel.Block\x12\x36\n\x08Schedule\x18\x04 \x01(\x0b\x32$.DynStacking.DataModel.CraneSchedule\x12\x16\n\x0eGirderPosition\x18\x05 \x01(\x01\x12\x15\n\rHoistPosition\x18\x06 \x01(\x01\"R\n\tCraneMove\x12\x0f\n\x07\x42lockId\x18\x01 \x01(\x05\x12\x10\n\x08SourceId\x18\x02 \x01(\x05\x12\x10\n\x08TargetId\x18\x03 \x01(\x05\x12\x10\n\x08Sequence\x18\x04 \x01(\x05\"T\n\rCraneSchedule\x12/\n\x05Moves\x18\x01 \x03(\x0b\x32 .DynStacking.DataModel.CraneMove\x12\x12\n\nSequenceNr\x18\x02 \x01(\x05\"R\n\x08Handover\x12\n\n\x02Id\x18\x01 \x01(\x05\x12\r\n\x05Ready\x18\x02 \x01(\x08\x12+\n\x05\x42lock\x18\x03 \x01(\x0b\x32\x1c.DynStacking.DataModel.Block\"\xfd\x01\n\x0bPerformance\x12\x1a\n\x12\x43raneManipulations\x18\x01 \x01(\x05\x12\x18\n\x10ServiceLevelMean\x18\x02 \x01(\x01\x12\x14\n\x0cLeadTimeMean\x18\x03 \x01(\x01\x12\x17\n\x0f\x44\x65liveredBlocks\x18\x04 \x01(\x05\x12\x19\n\x11TotalBlocksOnTime\x18\x05 \x01(\x05\x12\x1a\n\x12\x42lockedArrivalTime\x18\x06 \x01(\x01\x12\x15\n\rTardinessMean\x18\x07 \x01(\x01\x12\x1d\n\x15\x42ufferUtilizationMean\x18\x08 \x01(\x01\x12\x1c\n\x14\x43raneUtilizationMean\x18\t \x01(\x01\"Y\n\x05Stack\x12\n\n\x02Id\x18\x01 \x01(\x05\x12\x11\n\tMaxHeight\x18\x02 \x01(\x05\x12\x31\n\x0b\x42ottomToTop\x18\x03 \x03(\x0b\x32\x1c.DynStacking.DataModel.Block\"!\n\tTimeStamp\x12\x14\n\x0cMilliSeconds\x18\x01 \x01(\x03\"m\n\rUncertainties\x12\x1c\n\x10\x41rrivalIntervals\x18\x01 \x03(\x01\x42\x02\x10\x00\x12\x1a\n\x0e\x43raneMoveTimes\x18\x02 \x03(\x01\x42\x02\x10\x00\x12\"\n\x16HandoverReadyIntervals\x18\x03 \x03(\x01\x42\x02\x10\x00\"\xe8\x02\n\x05World\x12-\n\x03Now\x18\x01 \x01(\x0b\x32 .DynStacking.DataModel.TimeStamp\x12\x30\n\nProduction\x18\x02 \x01(\x0b\x32\x1c.DynStacking.DataModel.Stack\x12-\n\x07\x42uffers\x18\x03 \x03(\x0b\x32\x1c.DynStacking.DataModel.Stack\x12\x31\n\x08Handover\x18\x04 \x01(\x0b\x32\x1f.DynStacking.DataModel.Handover\x12+\n\x05\x43rane\x18\x05 \x01(\x0b\x32\x1c.DynStacking.DataModel.Crane\x12\x30\n\x04KPIs\x18\x06 \x01(\x0b\x32\".DynStacking.DataModel.Performance\x12=\n\x0fObservationData\x18\x07 \x01(\x0b\x32$.DynStacking.DataModel.Uncertaintiesb\x06proto3')
 )
 
 
@@ -36,7 +36,7 @@ _BLOCK = _descriptor.Descriptor(
     _descriptor.FieldDescriptor(
       name='Id', full_name='DynStacking.DataModel.Block.Id', index=0,
       number=1, type=5, cpp_type=1, label=1,
-      has_default_value=True, default_value=0,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
@@ -57,7 +57,7 @@ _BLOCK = _descriptor.Descriptor(
     _descriptor.FieldDescriptor(
       name='Ready', full_name='DynStacking.DataModel.Block.Ready', index=3,
       number=4, type=8, cpp_type=7, label=1,
-      has_default_value=True, default_value=False,
+      has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
@@ -69,12 +69,12 @@ _BLOCK = _descriptor.Descriptor(
   ],
   serialized_options=None,
   is_extendable=False,
-  syntax='proto2',
+  syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
   serialized_start=44,
-  serialized_end=186,
+  serialized_end=176,
 )
 
 
@@ -88,14 +88,14 @@ _CRANE = _descriptor.Descriptor(
     _descriptor.FieldDescriptor(
       name='Id', full_name='DynStacking.DataModel.Crane.Id', index=0,
       number=1, type=5, cpp_type=1, label=1,
-      has_default_value=True, default_value=0,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='LocationId', full_name='DynStacking.DataModel.Crane.LocationId', index=1,
       number=2, type=5, cpp_type=1, label=1,
-      has_default_value=True, default_value=0,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
@@ -116,14 +116,14 @@ _CRANE = _descriptor.Descriptor(
     _descriptor.FieldDescriptor(
       name='GirderPosition', full_name='DynStacking.DataModel.Crane.GirderPosition', index=4,
       number=5, type=1, cpp_type=5, label=1,
-      has_default_value=True, default_value=float(0),
+      has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='HoistPosition', full_name='DynStacking.DataModel.Crane.HoistPosition', index=5,
       number=6, type=1, cpp_type=5, label=1,
-      has_default_value=True, default_value=float(0),
+      has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
@@ -135,12 +135,12 @@ _CRANE = _descriptor.Descriptor(
   ],
   serialized_options=None,
   is_extendable=False,
-  syntax='proto2',
+  syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=189,
-  serialized_end=387,
+  serialized_start=179,
+  serialized_end=365,
 )
 
 
@@ -168,14 +168,14 @@ _CRANEMOVE = _descriptor.Descriptor(
     _descriptor.FieldDescriptor(
       name='TargetId', full_name='DynStacking.DataModel.CraneMove.TargetId', index=2,
       number=3, type=5, cpp_type=1, label=1,
-      has_default_value=True, default_value=0,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='Sequence', full_name='DynStacking.DataModel.CraneMove.Sequence', index=3,
       number=4, type=5, cpp_type=1, label=1,
-      has_default_value=True, default_value=0,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
@@ -187,12 +187,12 @@ _CRANEMOVE = _descriptor.Descriptor(
   ],
   serialized_options=None,
   is_extendable=False,
-  syntax='proto2',
+  syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=389,
-  serialized_end=477,
+  serialized_start=367,
+  serialized_end=449,
 )
 
 
@@ -213,7 +213,7 @@ _CRANESCHEDULE = _descriptor.Descriptor(
     _descriptor.FieldDescriptor(
       name='SequenceNr', full_name='DynStacking.DataModel.CraneSchedule.SequenceNr', index=1,
       number=2, type=5, cpp_type=1, label=1,
-      has_default_value=True, default_value=0,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
@@ -225,12 +225,12 @@ _CRANESCHEDULE = _descriptor.Descriptor(
   ],
   serialized_options=None,
   is_extendable=False,
-  syntax='proto2',
+  syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=479,
-  serialized_end=566,
+  serialized_start=451,
+  serialized_end=535,
 )
 
 
@@ -244,14 +244,14 @@ _HANDOVER = _descriptor.Descriptor(
     _descriptor.FieldDescriptor(
       name='Id', full_name='DynStacking.DataModel.Handover.Id', index=0,
       number=1, type=5, cpp_type=1, label=1,
-      has_default_value=True, default_value=0,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='Ready', full_name='DynStacking.DataModel.Handover.Ready', index=1,
       number=2, type=8, cpp_type=7, label=1,
-      has_default_value=True, default_value=False,
+      has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
@@ -270,12 +270,12 @@ _HANDOVER = _descriptor.Descriptor(
   ],
   serialized_options=None,
   is_extendable=False,
-  syntax='proto2',
+  syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=568,
-  serialized_end=660,
+  serialized_start=537,
+  serialized_end=619,
 )
 
 
@@ -289,63 +289,63 @@ _PERFORMANCE = _descriptor.Descriptor(
     _descriptor.FieldDescriptor(
       name='CraneManipulations', full_name='DynStacking.DataModel.Performance.CraneManipulations', index=0,
       number=1, type=5, cpp_type=1, label=1,
-      has_default_value=True, default_value=0,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='ServiceLevelMean', full_name='DynStacking.DataModel.Performance.ServiceLevelMean', index=1,
       number=2, type=1, cpp_type=5, label=1,
-      has_default_value=True, default_value=float(0),
+      has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='LeadTimeMean', full_name='DynStacking.DataModel.Performance.LeadTimeMean', index=2,
       number=3, type=1, cpp_type=5, label=1,
-      has_default_value=True, default_value=float(0),
+      has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='DeliveredBlocks', full_name='DynStacking.DataModel.Performance.DeliveredBlocks', index=3,
       number=4, type=5, cpp_type=1, label=1,
-      has_default_value=True, default_value=0,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='TotalBlocksOnTime', full_name='DynStacking.DataModel.Performance.TotalBlocksOnTime', index=4,
       number=5, type=5, cpp_type=1, label=1,
-      has_default_value=True, default_value=0,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='BlockedArrivalTime', full_name='DynStacking.DataModel.Performance.BlockedArrivalTime', index=5,
       number=6, type=1, cpp_type=5, label=1,
-      has_default_value=True, default_value=float(0),
+      has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='TardinessMean', full_name='DynStacking.DataModel.Performance.TardinessMean', index=6,
       number=7, type=1, cpp_type=5, label=1,
-      has_default_value=True, default_value=float(0),
+      has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='BufferUtilizationMean', full_name='DynStacking.DataModel.Performance.BufferUtilizationMean', index=7,
       number=8, type=1, cpp_type=5, label=1,
-      has_default_value=True, default_value=float(0),
+      has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='CraneUtilizationMean', full_name='DynStacking.DataModel.Performance.CraneUtilizationMean', index=8,
       number=9, type=1, cpp_type=5, label=1,
-      has_default_value=True, default_value=float(0),
+      has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
@@ -357,12 +357,12 @@ _PERFORMANCE = _descriptor.Descriptor(
   ],
   serialized_options=None,
   is_extendable=False,
-  syntax='proto2',
+  syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=663,
-  serialized_end=943,
+  serialized_start=622,
+  serialized_end=875,
 )
 
 
@@ -376,14 +376,14 @@ _STACK = _descriptor.Descriptor(
     _descriptor.FieldDescriptor(
       name='Id', full_name='DynStacking.DataModel.Stack.Id', index=0,
       number=1, type=5, cpp_type=1, label=1,
-      has_default_value=True, default_value=0,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='MaxHeight', full_name='DynStacking.DataModel.Stack.MaxHeight', index=1,
       number=2, type=5, cpp_type=1, label=1,
-      has_default_value=True, default_value=0,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
@@ -402,12 +402,12 @@ _STACK = _descriptor.Descriptor(
   ],
   serialized_options=None,
   is_extendable=False,
-  syntax='proto2',
+  syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=945,
-  serialized_end=1040,
+  serialized_start=877,
+  serialized_end=966,
 )
 
 
@@ -421,7 +421,7 @@ _TIMESTAMP = _descriptor.Descriptor(
     _descriptor.FieldDescriptor(
       name='MilliSeconds', full_name='DynStacking.DataModel.TimeStamp.MilliSeconds', index=0,
       number=1, type=3, cpp_type=2, label=1,
-      has_default_value=True, default_value=0,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
@@ -433,12 +433,12 @@ _TIMESTAMP = _descriptor.Descriptor(
   ],
   serialized_options=None,
   is_extendable=False,
-  syntax='proto2',
+  syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1042,
-  serialized_end=1078,
+  serialized_start=968,
+  serialized_end=1001,
 )
 
 
@@ -455,21 +455,21 @@ _UNCERTAINTIES = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=_b('\020\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='CraneMoveTimes', full_name='DynStacking.DataModel.Uncertainties.CraneMoveTimes', index=1,
       number=2, type=1, cpp_type=5, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=_b('\020\000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='HandoverReadyIntervals', full_name='DynStacking.DataModel.Uncertainties.HandoverReadyIntervals', index=2,
       number=3, type=1, cpp_type=5, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=_b('\020\000'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -478,12 +478,12 @@ _UNCERTAINTIES = _descriptor.Descriptor(
   ],
   serialized_options=None,
   is_extendable=False,
-  syntax='proto2',
+  syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1080,
-  serialized_end=1177,
+  serialized_start=1003,
+  serialized_end=1112,
 )
 
 
@@ -551,12 +551,12 @@ _WORLD = _descriptor.Descriptor(
   ],
   serialized_options=None,
   is_extendable=False,
-  syntax='proto2',
+  syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1180,
-  serialized_end=1540,
+  serialized_start=1115,
+  serialized_end=1475,
 )
 
 _BLOCK.fields_by_name['Release'].message_type = _TIMESTAMP
@@ -656,4 +656,7 @@ World = _reflection.GeneratedProtocolMessageType('World', (_message.Message,), {
 _sym_db.RegisterMessage(World)
 
 
+_UNCERTAINTIES.fields_by_name['ArrivalIntervals']._options = None
+_UNCERTAINTIES.fields_by_name['CraneMoveTimes']._options = None
+_UNCERTAINTIES.fields_by_name['HandoverReadyIntervals']._options = None
 # @@protoc_insertion_point(module_scope)
