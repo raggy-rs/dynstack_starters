@@ -1,3 +1,2 @@
-rust/modelbased/target/*
 python/__pycache__/*
-rust/rulebased/target/*
+rust/target/*

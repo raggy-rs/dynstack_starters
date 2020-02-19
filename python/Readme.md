@@ -1,4 +1,4 @@
-Template for a python based solver.
+Templates for a python based solvers.
 ================================
 
 Prerequisits:
@@ -19,4 +19,6 @@ Building:
 Running:
 --------
 
-> python dynstack.py tcp://1.2.3.4:8080 tcp://1.2.3.4:8081 G26NT63A
+> python rulebased.py tcp://1.2.3.4:8080 tcp://1.2.3.4:8081 fbc6b6ab-9786-4068-986d-b0f5da49fa85
+or
+> python modelbased.py tcp://1.2.3.4:8080 tcp://1.2.3.4:8081 fbc6b6ab-9786-4068-986d-b0f5da49fa85

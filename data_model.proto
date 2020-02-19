@@ -37,6 +37,9 @@ optional double LeadTimeMean = 3 [default = 0];
 optional int32 DeliveredBlocks = 4 [default = 0];
 optional int32 TotalBlocksOnTime = 5 [default = 0];
 optional double BlockedArrivalTime = 6 [default = 0];
+optional double TardinessMean = 7 [default = 0];
+optional double BufferUtilizationMean = 8 [default = 0];
+optional double CraneUtilizationMean = 9 [default = 0];
 }
 message Stack {
 optional int32 Id = 1 [default = 0];
@@ -46,6 +49,11 @@ repeated Block BottomToTop = 3;
 message TimeStamp {
 optional int64 MilliSeconds = 1 [default = 0];
 }
+message Uncertainties {
+repeated double ArrivalIntervals = 1;
+repeated double CraneMoveTimes = 2;
+repeated double HandoverReadyIntervals = 3;
+}
 message World {
 optional TimeStamp Now = 1;
 optional Stack Production = 2;
@@ -53,4 +61,5 @@ repeated Stack Buffers = 3;
 optional Handover Handover = 4;
 optional Crane Crane = 5;
 optional Performance KPIs = 6;
+optional Uncertainties ObservationData = 7;
 } 

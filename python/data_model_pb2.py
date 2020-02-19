@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='DynStacking.DataModel',
   syntax='proto2',
   serialized_options=None,
-  serialized_pb=_b('\n\x10\x64\x61ta_model.proto\x12\x15\x44ynStacking.DataModel\"\x8e\x01\n\x05\x42lock\x12\r\n\x02Id\x18\x01 \x01(\x05:\x01\x30\x12\x31\n\x07Release\x18\x02 \x01(\x0b\x32 .DynStacking.DataModel.TimeStamp\x12-\n\x03\x44ue\x18\x03 \x01(\x0b\x32 .DynStacking.DataModel.TimeStamp\x12\x14\n\x05Ready\x18\x04 \x01(\x08:\x05\x66\x61lse\"\xc6\x01\n\x05\x43rane\x12\r\n\x02Id\x18\x01 \x01(\x05:\x01\x30\x12\x15\n\nLocationId\x18\x02 \x01(\x05:\x01\x30\x12*\n\x04Load\x18\x03 \x01(\x0b\x32\x1c.DynStacking.DataModel.Block\x12\x36\n\x08Schedule\x18\x04 \x01(\x0b\x32$.DynStacking.DataModel.CraneSchedule\x12\x19\n\x0eGirderPosition\x18\x05 \x01(\x01:\x01\x30\x12\x18\n\rHoistPosition\x18\x06 \x01(\x01:\x01\x30\"X\n\tCraneMove\x12\x0f\n\x07\x42lockId\x18\x01 \x01(\x05\x12\x10\n\x08SourceId\x18\x02 \x01(\x05\x12\x13\n\x08TargetId\x18\x03 \x01(\x05:\x01\x30\x12\x13\n\x08Sequence\x18\x04 \x01(\x05:\x01\x30\"W\n\rCraneSchedule\x12/\n\x05Moves\x18\x01 \x03(\x0b\x32 .DynStacking.DataModel.CraneMove\x12\x15\n\nSequenceNr\x18\x02 \x01(\x05:\x01\x30\"\\\n\x08Handover\x12\r\n\x02Id\x18\x01 \x01(\x05:\x01\x30\x12\x14\n\x05Ready\x18\x02 \x01(\x08:\x05\x66\x61lse\x12+\n\x05\x42lock\x18\x03 \x01(\x0b\x32\x1c.DynStacking.DataModel.Block\"\xbb\x01\n\x0bPerformance\x12\x1d\n\x12\x43raneManipulations\x18\x01 \x01(\x05:\x01\x30\x12\x1b\n\x10ServiceLevelMean\x18\x02 \x01(\x01:\x01\x30\x12\x17\n\x0cLeadTimeMean\x18\x03 \x01(\x01:\x01\x30\x12\x1a\n\x0f\x44\x65liveredBlocks\x18\x04 \x01(\x05:\x01\x30\x12\x1c\n\x11TotalBlocksOnTime\x18\x05 \x01(\x05:\x01\x30\x12\x1d\n\x12\x42lockedArrivalTime\x18\x06 \x01(\x01:\x01\x30\"_\n\x05Stack\x12\r\n\x02Id\x18\x01 \x01(\x05:\x01\x30\x12\x14\n\tMaxHeight\x18\x02 \x01(\x05:\x01\x30\x12\x31\n\x0b\x42ottomToTop\x18\x03 \x03(\x0b\x32\x1c.DynStacking.DataModel.Block\"$\n\tTimeStamp\x12\x17\n\x0cMilliSeconds\x18\x01 \x01(\x03:\x01\x30\"\xa9\x02\n\x05World\x12-\n\x03Now\x18\x01 \x01(\x0b\x32 .DynStacking.DataModel.TimeStamp\x12\x30\n\nProduction\x18\x02 \x01(\x0b\x32\x1c.DynStacking.DataModel.Stack\x12-\n\x07\x42uffers\x18\x03 \x03(\x0b\x32\x1c.DynStacking.DataModel.Stack\x12\x31\n\x08Handover\x18\x04 \x01(\x0b\x32\x1f.DynStacking.DataModel.Handover\x12+\n\x05\x43rane\x18\x05 \x01(\x0b\x32\x1c.DynStacking.DataModel.Crane\x12\x30\n\x04KPIs\x18\x06 \x01(\x0b\x32\".DynStacking.DataModel.Performance')
+  serialized_pb=_b('\n\x10\x64\x61ta_model.proto\x12\x15\x44ynStacking.DataModel\"\x8e\x01\n\x05\x42lock\x12\r\n\x02Id\x18\x01 \x01(\x05:\x01\x30\x12\x31\n\x07Release\x18\x02 \x01(\x0b\x32 .DynStacking.DataModel.TimeStamp\x12-\n\x03\x44ue\x18\x03 \x01(\x0b\x32 .DynStacking.DataModel.TimeStamp\x12\x14\n\x05Ready\x18\x04 \x01(\x08:\x05\x66\x61lse\"\xc6\x01\n\x05\x43rane\x12\r\n\x02Id\x18\x01 \x01(\x05:\x01\x30\x12\x15\n\nLocationId\x18\x02 \x01(\x05:\x01\x30\x12*\n\x04Load\x18\x03 \x01(\x0b\x32\x1c.DynStacking.DataModel.Block\x12\x36\n\x08Schedule\x18\x04 \x01(\x0b\x32$.DynStacking.DataModel.CraneSchedule\x12\x19\n\x0eGirderPosition\x18\x05 \x01(\x01:\x01\x30\x12\x18\n\rHoistPosition\x18\x06 \x01(\x01:\x01\x30\"X\n\tCraneMove\x12\x0f\n\x07\x42lockId\x18\x01 \x01(\x05\x12\x10\n\x08SourceId\x18\x02 \x01(\x05\x12\x13\n\x08TargetId\x18\x03 \x01(\x05:\x01\x30\x12\x13\n\x08Sequence\x18\x04 \x01(\x05:\x01\x30\"W\n\rCraneSchedule\x12/\n\x05Moves\x18\x01 \x03(\x0b\x32 .DynStacking.DataModel.CraneMove\x12\x15\n\nSequenceNr\x18\x02 \x01(\x05:\x01\x30\"\\\n\x08Handover\x12\r\n\x02Id\x18\x01 \x01(\x05:\x01\x30\x12\x14\n\x05Ready\x18\x02 \x01(\x08:\x05\x66\x61lse\x12+\n\x05\x42lock\x18\x03 \x01(\x0b\x32\x1c.DynStacking.DataModel.Block\"\x98\x02\n\x0bPerformance\x12\x1d\n\x12\x43raneManipulations\x18\x01 \x01(\x05:\x01\x30\x12\x1b\n\x10ServiceLevelMean\x18\x02 \x01(\x01:\x01\x30\x12\x17\n\x0cLeadTimeMean\x18\x03 \x01(\x01:\x01\x30\x12\x1a\n\x0f\x44\x65liveredBlocks\x18\x04 \x01(\x05:\x01\x30\x12\x1c\n\x11TotalBlocksOnTime\x18\x05 \x01(\x05:\x01\x30\x12\x1d\n\x12\x42lockedArrivalTime\x18\x06 \x01(\x01:\x01\x30\x12\x18\n\rTardinessMean\x18\x07 \x01(\x01:\x01\x30\x12 \n\x15\x42ufferUtilizationMean\x18\x08 \x01(\x01:\x01\x30\x12\x1f\n\x14\x43raneUtilizationMean\x18\t \x01(\x01:\x01\x30\"_\n\x05Stack\x12\r\n\x02Id\x18\x01 \x01(\x05:\x01\x30\x12\x14\n\tMaxHeight\x18\x02 \x01(\x05:\x01\x30\x12\x31\n\x0b\x42ottomToTop\x18\x03 \x03(\x0b\x32\x1c.DynStacking.DataModel.Block\"$\n\tTimeStamp\x12\x17\n\x0cMilliSeconds\x18\x01 \x01(\x03:\x01\x30\"a\n\rUncertainties\x12\x18\n\x10\x41rrivalIntervals\x18\x01 \x03(\x01\x12\x16\n\x0e\x43raneMoveTimes\x18\x02 \x03(\x01\x12\x1e\n\x16HandoverReadyIntervals\x18\x03 \x03(\x01\"\xe8\x02\n\x05World\x12-\n\x03Now\x18\x01 \x01(\x0b\x32 .DynStacking.DataModel.TimeStamp\x12\x30\n\nProduction\x18\x02 \x01(\x0b\x32\x1c.DynStacking.DataModel.Stack\x12-\n\x07\x42uffers\x18\x03 \x03(\x0b\x32\x1c.DynStacking.DataModel.Stack\x12\x31\n\x08Handover\x18\x04 \x01(\x0b\x32\x1f.DynStacking.DataModel.Handover\x12+\n\x05\x43rane\x18\x05 \x01(\x0b\x32\x1c.DynStacking.DataModel.Crane\x12\x30\n\x04KPIs\x18\x06 \x01(\x0b\x32\".DynStacking.DataModel.Performance\x12=\n\x0fObservationData\x18\x07 \x01(\x0b\x32$.DynStacking.DataModel.Uncertainties')
 )
 
 
@@ -328,6 +328,27 @@ _PERFORMANCE = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='TardinessMean', full_name='DynStacking.DataModel.Performance.TardinessMean', index=6,
+      number=7, type=1, cpp_type=5, label=1,
+      has_default_value=True, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='BufferUtilizationMean', full_name='DynStacking.DataModel.Performance.BufferUtilizationMean', index=7,
+      number=8, type=1, cpp_type=5, label=1,
+      has_default_value=True, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='CraneUtilizationMean', full_name='DynStacking.DataModel.Performance.CraneUtilizationMean', index=8,
+      number=9, type=1, cpp_type=5, label=1,
+      has_default_value=True, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -341,7 +362,7 @@ _PERFORMANCE = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=663,
-  serialized_end=850,
+  serialized_end=943,
 )
 
 
@@ -385,8 +406,8 @@ _STACK = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=852,
-  serialized_end=947,
+  serialized_start=945,
+  serialized_end=1040,
 )
 
 
@@ -416,8 +437,53 @@ _TIMESTAMP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=949,
-  serialized_end=985,
+  serialized_start=1042,
+  serialized_end=1078,
+)
+
+
+_UNCERTAINTIES = _descriptor.Descriptor(
+  name='Uncertainties',
+  full_name='DynStacking.DataModel.Uncertainties',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='ArrivalIntervals', full_name='DynStacking.DataModel.Uncertainties.ArrivalIntervals', index=0,
+      number=1, type=1, cpp_type=5, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='CraneMoveTimes', full_name='DynStacking.DataModel.Uncertainties.CraneMoveTimes', index=1,
+      number=2, type=1, cpp_type=5, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='HandoverReadyIntervals', full_name='DynStacking.DataModel.Uncertainties.HandoverReadyIntervals', index=2,
+      number=3, type=1, cpp_type=5, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto2',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1080,
+  serialized_end=1177,
 )
 
 
@@ -470,6 +536,13 @@ _WORLD = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='ObservationData', full_name='DynStacking.DataModel.World.ObservationData', index=6,
+      number=7, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -482,8 +555,8 @@ _WORLD = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=988,
-  serialized_end=1285,
+  serialized_start=1180,
+  serialized_end=1540,
 )
 
 _BLOCK.fields_by_name['Release'].message_type = _TIMESTAMP
@@ -499,6 +572,7 @@ _WORLD.fields_by_name['Buffers'].message_type = _STACK
 _WORLD.fields_by_name['Handover'].message_type = _HANDOVER
 _WORLD.fields_by_name['Crane'].message_type = _CRANE
 _WORLD.fields_by_name['KPIs'].message_type = _PERFORMANCE
+_WORLD.fields_by_name['ObservationData'].message_type = _UNCERTAINTIES
 DESCRIPTOR.message_types_by_name['Block'] = _BLOCK
 DESCRIPTOR.message_types_by_name['Crane'] = _CRANE
 DESCRIPTOR.message_types_by_name['CraneMove'] = _CRANEMOVE
@@ -507,6 +581,7 @@ DESCRIPTOR.message_types_by_name['Handover'] = _HANDOVER
 DESCRIPTOR.message_types_by_name['Performance'] = _PERFORMANCE
 DESCRIPTOR.message_types_by_name['Stack'] = _STACK
 DESCRIPTOR.message_types_by_name['TimeStamp'] = _TIMESTAMP
+DESCRIPTOR.message_types_by_name['Uncertainties'] = _UNCERTAINTIES
 DESCRIPTOR.message_types_by_name['World'] = _WORLD
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
@@ -565,6 +640,13 @@ TimeStamp = _reflection.GeneratedProtocolMessageType('TimeStamp', (_message.Mess
   # @@protoc_insertion_point(class_scope:DynStacking.DataModel.TimeStamp)
   })
 _sym_db.RegisterMessage(TimeStamp)
+
+Uncertainties = _reflection.GeneratedProtocolMessageType('Uncertainties', (_message.Message,), {
+  'DESCRIPTOR' : _UNCERTAINTIES,
+  '__module__' : 'data_model_pb2'
+  # @@protoc_insertion_point(class_scope:DynStacking.DataModel.Uncertainties)
+  })
+_sym_db.RegisterMessage(Uncertainties)
 
 World = _reflection.GeneratedProtocolMessageType('World', (_message.Message,), {
   'DESCRIPTOR' : _WORLD,

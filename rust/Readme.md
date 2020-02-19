@@ -1,4 +1,4 @@
-Template for a any solver written in rust.
+Templates for rust based solvers.
 ================================
 
 Prerequisits:
@@ -17,4 +17,8 @@ Protobuf is automatically compiled during the build.
 Running:
 --------
 
-> cargo run tcp://1.2.3.4:8080 tcp://1.2.3.4:8081 G26NT63A
+> cargo run --release --bin rulebased tcp://1.2.3.4:8080 tcp://1.2.3.4:8081 fbc6b6ab-9786-4068-986d-b0f5da49fa85
+
+or 
+
+> cargo run --release --bin modelbased tcp://1.2.3.4:8080 tcp://1.2.3.4:8081 fbc6b6ab-9786-4068-986d-b0f5da49fa85

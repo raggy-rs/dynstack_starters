@@ -1511,6 +1511,9 @@ pub struct Performance {
     DeliveredBlocks: ::std::option::Option<i32>,
     TotalBlocksOnTime: ::std::option::Option<i32>,
     BlockedArrivalTime: ::std::option::Option<f64>,
+    TardinessMean: ::std::option::Option<f64>,
+    BufferUtilizationMean: ::std::option::Option<f64>,
+    CraneUtilizationMean: ::std::option::Option<f64>,
     // special fields
     pub unknown_fields: ::protobuf::UnknownFields,
     pub cached_size: ::protobuf::CachedSize,
@@ -1640,6 +1643,63 @@ impl Performance {
     pub fn set_BlockedArrivalTime(&mut self, v: f64) {
         self.BlockedArrivalTime = ::std::option::Option::Some(v);
     }
+
+    // optional double TardinessMean = 7;
+
+
+    pub fn get_TardinessMean(&self) -> f64 {
+        self.TardinessMean.unwrap_or(0.0f64)
+    }
+    pub fn clear_TardinessMean(&mut self) {
+        self.TardinessMean = ::std::option::Option::None;
+    }
+
+    pub fn has_TardinessMean(&self) -> bool {
+        self.TardinessMean.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_TardinessMean(&mut self, v: f64) {
+        self.TardinessMean = ::std::option::Option::Some(v);
+    }
+
+    // optional double BufferUtilizationMean = 8;
+
+
+    pub fn get_BufferUtilizationMean(&self) -> f64 {
+        self.BufferUtilizationMean.unwrap_or(0.0f64)
+    }
+    pub fn clear_BufferUtilizationMean(&mut self) {
+        self.BufferUtilizationMean = ::std::option::Option::None;
+    }
+
+    pub fn has_BufferUtilizationMean(&self) -> bool {
+        self.BufferUtilizationMean.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_BufferUtilizationMean(&mut self, v: f64) {
+        self.BufferUtilizationMean = ::std::option::Option::Some(v);
+    }
+
+    // optional double CraneUtilizationMean = 9;
+
+
+    pub fn get_CraneUtilizationMean(&self) -> f64 {
+        self.CraneUtilizationMean.unwrap_or(0.0f64)
+    }
+    pub fn clear_CraneUtilizationMean(&mut self) {
+        self.CraneUtilizationMean = ::std::option::Option::None;
+    }
+
+    pub fn has_CraneUtilizationMean(&self) -> bool {
+        self.CraneUtilizationMean.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_CraneUtilizationMean(&mut self, v: f64) {
+        self.CraneUtilizationMean = ::std::option::Option::Some(v);
+    }
 }
 
 impl ::protobuf::Message for Performance {
@@ -1693,6 +1753,27 @@ impl ::protobuf::Message for Performance {
                     let tmp = is.read_double()?;
                     self.BlockedArrivalTime = ::std::option::Option::Some(tmp);
                 },
+                7 => {
+                    if wire_type != ::protobuf::wire_format::WireTypeFixed64 {
+                        return ::std::result::Result::Err(::protobuf::rt::unexpected_wire_type(wire_type));
+                    }
+                    let tmp = is.read_double()?;
+                    self.TardinessMean = ::std::option::Option::Some(tmp);
+                },
+                8 => {
+                    if wire_type != ::protobuf::wire_format::WireTypeFixed64 {
+                        return ::std::result::Result::Err(::protobuf::rt::unexpected_wire_type(wire_type));
+                    }
+                    let tmp = is.read_double()?;
+                    self.BufferUtilizationMean = ::std::option::Option::Some(tmp);
+                },
+                9 => {
+                    if wire_type != ::protobuf::wire_format::WireTypeFixed64 {
+                        return ::std::result::Result::Err(::protobuf::rt::unexpected_wire_type(wire_type));
+                    }
+                    let tmp = is.read_double()?;
+                    self.CraneUtilizationMean = ::std::option::Option::Some(tmp);
+                },
                 _ => {
                     ::protobuf::rt::read_unknown_or_skip_group(field_number, wire_type, is, self.mut_unknown_fields())?;
                 },
@@ -1723,6 +1804,15 @@ impl ::protobuf::Message for Performance {
         if let Some(v) = self.BlockedArrivalTime {
             my_size += 9;
         }
+        if let Some(v) = self.TardinessMean {
+            my_size += 9;
+        }
+        if let Some(v) = self.BufferUtilizationMean {
+            my_size += 9;
+        }
+        if let Some(v) = self.CraneUtilizationMean {
+            my_size += 9;
+        }
         my_size += ::protobuf::rt::unknown_fields_size(self.get_unknown_fields());
         self.cached_size.set(my_size);
         my_size
@@ -1746,6 +1836,15 @@ impl ::protobuf::Message for Performance {
         }
         if let Some(v) = self.BlockedArrivalTime {
             os.write_double(6, v)?;
+        }
+        if let Some(v) = self.TardinessMean {
+            os.write_double(7, v)?;
+        }
+        if let Some(v) = self.BufferUtilizationMean {
+            os.write_double(8, v)?;
+        }
+        if let Some(v) = self.CraneUtilizationMean {
+            os.write_double(9, v)?;
         }
         os.write_unknown_fields(self.get_unknown_fields())?;
         ::std::result::Result::Ok(())
@@ -1819,6 +1918,21 @@ impl ::protobuf::Message for Performance {
                     |m: &Performance| { &m.BlockedArrivalTime },
                     |m: &mut Performance| { &mut m.BlockedArrivalTime },
                 ));
+                fields.push(::protobuf::reflect::accessor::make_option_accessor::<_, ::protobuf::types::ProtobufTypeDouble>(
+                    "TardinessMean",
+                    |m: &Performance| { &m.TardinessMean },
+                    |m: &mut Performance| { &mut m.TardinessMean },
+                ));
+                fields.push(::protobuf::reflect::accessor::make_option_accessor::<_, ::protobuf::types::ProtobufTypeDouble>(
+                    "BufferUtilizationMean",
+                    |m: &Performance| { &m.BufferUtilizationMean },
+                    |m: &mut Performance| { &mut m.BufferUtilizationMean },
+                ));
+                fields.push(::protobuf::reflect::accessor::make_option_accessor::<_, ::protobuf::types::ProtobufTypeDouble>(
+                    "CraneUtilizationMean",
+                    |m: &Performance| { &m.CraneUtilizationMean },
+                    |m: &mut Performance| { &mut m.CraneUtilizationMean },
+                ));
                 ::protobuf::reflect::MessageDescriptor::new::<Performance>(
                     "Performance",
                     fields,
@@ -1847,6 +1961,9 @@ impl ::protobuf::Clear for Performance {
         self.DeliveredBlocks = ::std::option::Option::None;
         self.TotalBlocksOnTime = ::std::option::Option::None;
         self.BlockedArrivalTime = ::std::option::Option::None;
+        self.TardinessMean = ::std::option::Option::None;
+        self.BufferUtilizationMean = ::std::option::Option::None;
+        self.CraneUtilizationMean = ::std::option::Option::None;
         self.unknown_fields.clear();
     }
 }
@@ -2284,6 +2401,250 @@ impl ::protobuf::reflect::ProtobufValue for TimeStamp {
 }
 
 #[derive(PartialEq,Clone,Default)]
+pub struct Uncertainties {
+    // message fields
+    ArrivalIntervals: ::std::vec::Vec<f64>,
+    CraneMoveTimes: ::std::vec::Vec<f64>,
+    HandoverReadyIntervals: ::std::vec::Vec<f64>,
+    // special fields
+    pub unknown_fields: ::protobuf::UnknownFields,
+    pub cached_size: ::protobuf::CachedSize,
+}
+
+impl<'a> ::std::default::Default for &'a Uncertainties {
+    fn default() -> &'a Uncertainties {
+        <Uncertainties as ::protobuf::Message>::default_instance()
+    }
+}
+
+impl Uncertainties {
+    pub fn new() -> Uncertainties {
+        ::std::default::Default::default()
+    }
+
+    // repeated double ArrivalIntervals = 1;
+
+
+    pub fn get_ArrivalIntervals(&self) -> &[f64] {
+        &self.ArrivalIntervals
+    }
+    pub fn clear_ArrivalIntervals(&mut self) {
+        self.ArrivalIntervals.clear();
+    }
+
+    // Param is passed by value, moved
+    pub fn set_ArrivalIntervals(&mut self, v: ::std::vec::Vec<f64>) {
+        self.ArrivalIntervals = v;
+    }
+
+    // Mutable pointer to the field.
+    pub fn mut_ArrivalIntervals(&mut self) -> &mut ::std::vec::Vec<f64> {
+        &mut self.ArrivalIntervals
+    }
+
+    // Take field
+    pub fn take_ArrivalIntervals(&mut self) -> ::std::vec::Vec<f64> {
+        ::std::mem::replace(&mut self.ArrivalIntervals, ::std::vec::Vec::new())
+    }
+
+    // repeated double CraneMoveTimes = 2;
+
+
+    pub fn get_CraneMoveTimes(&self) -> &[f64] {
+        &self.CraneMoveTimes
+    }
+    pub fn clear_CraneMoveTimes(&mut self) {
+        self.CraneMoveTimes.clear();
+    }
+
+    // Param is passed by value, moved
+    pub fn set_CraneMoveTimes(&mut self, v: ::std::vec::Vec<f64>) {
+        self.CraneMoveTimes = v;
+    }
+
+    // Mutable pointer to the field.
+    pub fn mut_CraneMoveTimes(&mut self) -> &mut ::std::vec::Vec<f64> {
+        &mut self.CraneMoveTimes
+    }
+
+    // Take field
+    pub fn take_CraneMoveTimes(&mut self) -> ::std::vec::Vec<f64> {
+        ::std::mem::replace(&mut self.CraneMoveTimes, ::std::vec::Vec::new())
+    }
+
+    // repeated double HandoverReadyIntervals = 3;
+
+
+    pub fn get_HandoverReadyIntervals(&self) -> &[f64] {
+        &self.HandoverReadyIntervals
+    }
+    pub fn clear_HandoverReadyIntervals(&mut self) {
+        self.HandoverReadyIntervals.clear();
+    }
+
+    // Param is passed by value, moved
+    pub fn set_HandoverReadyIntervals(&mut self, v: ::std::vec::Vec<f64>) {
+        self.HandoverReadyIntervals = v;
+    }
+
+    // Mutable pointer to the field.
+    pub fn mut_HandoverReadyIntervals(&mut self) -> &mut ::std::vec::Vec<f64> {
+        &mut self.HandoverReadyIntervals
+    }
+
+    // Take field
+    pub fn take_HandoverReadyIntervals(&mut self) -> ::std::vec::Vec<f64> {
+        ::std::mem::replace(&mut self.HandoverReadyIntervals, ::std::vec::Vec::new())
+    }
+}
+
+impl ::protobuf::Message for Uncertainties {
+    fn is_initialized(&self) -> bool {
+        true
+    }
+
+    fn merge_from(&mut self, is: &mut ::protobuf::CodedInputStream<'_>) -> ::protobuf::ProtobufResult<()> {
+        while !is.eof()? {
+            let (field_number, wire_type) = is.read_tag_unpack()?;
+            match field_number {
+                1 => {
+                    ::protobuf::rt::read_repeated_double_into(wire_type, is, &mut self.ArrivalIntervals)?;
+                },
+                2 => {
+                    ::protobuf::rt::read_repeated_double_into(wire_type, is, &mut self.CraneMoveTimes)?;
+                },
+                3 => {
+                    ::protobuf::rt::read_repeated_double_into(wire_type, is, &mut self.HandoverReadyIntervals)?;
+                },
+                _ => {
+                    ::protobuf::rt::read_unknown_or_skip_group(field_number, wire_type, is, self.mut_unknown_fields())?;
+                },
+            };
+        }
+        ::std::result::Result::Ok(())
+    }
+
+    // Compute sizes of nested messages
+    #[allow(unused_variables)]
+    fn compute_size(&self) -> u32 {
+        let mut my_size = 0;
+        my_size += 9 * self.ArrivalIntervals.len() as u32;
+        my_size += 9 * self.CraneMoveTimes.len() as u32;
+        my_size += 9 * self.HandoverReadyIntervals.len() as u32;
+        my_size += ::protobuf::rt::unknown_fields_size(self.get_unknown_fields());
+        self.cached_size.set(my_size);
+        my_size
+    }
+
+    fn write_to_with_cached_sizes(&self, os: &mut ::protobuf::CodedOutputStream<'_>) -> ::protobuf::ProtobufResult<()> {
+        for v in &self.ArrivalIntervals {
+            os.write_double(1, *v)?;
+        };
+        for v in &self.CraneMoveTimes {
+            os.write_double(2, *v)?;
+        };
+        for v in &self.HandoverReadyIntervals {
+            os.write_double(3, *v)?;
+        };
+        os.write_unknown_fields(self.get_unknown_fields())?;
+        ::std::result::Result::Ok(())
+    }
+
+    fn get_cached_size(&self) -> u32 {
+        self.cached_size.get()
+    }
+
+    fn get_unknown_fields(&self) -> &::protobuf::UnknownFields {
+        &self.unknown_fields
+    }
+
+    fn mut_unknown_fields(&mut self) -> &mut ::protobuf::UnknownFields {
+        &mut self.unknown_fields
+    }
+
+    fn as_any(&self) -> &dyn (::std::any::Any) {
+        self as &dyn (::std::any::Any)
+    }
+    fn as_any_mut(&mut self) -> &mut dyn (::std::any::Any) {
+        self as &mut dyn (::std::any::Any)
+    }
+    fn into_any(self: Box<Self>) -> ::std::boxed::Box<dyn (::std::any::Any)> {
+        self
+    }
+
+    fn descriptor(&self) -> &'static ::protobuf::reflect::MessageDescriptor {
+        Self::descriptor_static()
+    }
+
+    fn new() -> Uncertainties {
+        Uncertainties::new()
+    }
+
+    fn descriptor_static() -> &'static ::protobuf::reflect::MessageDescriptor {
+        static mut descriptor: ::protobuf::lazy::Lazy<::protobuf::reflect::MessageDescriptor> = ::protobuf::lazy::Lazy {
+            lock: ::protobuf::lazy::ONCE_INIT,
+            ptr: 0 as *const ::protobuf::reflect::MessageDescriptor,
+        };
+        unsafe {
+            descriptor.get(|| {
+                let mut fields = ::std::vec::Vec::new();
+                fields.push(::protobuf::reflect::accessor::make_vec_accessor::<_, ::protobuf::types::ProtobufTypeDouble>(
+                    "ArrivalIntervals",
+                    |m: &Uncertainties| { &m.ArrivalIntervals },
+                    |m: &mut Uncertainties| { &mut m.ArrivalIntervals },
+                ));
+                fields.push(::protobuf::reflect::accessor::make_vec_accessor::<_, ::protobuf::types::ProtobufTypeDouble>(
+                    "CraneMoveTimes",
+                    |m: &Uncertainties| { &m.CraneMoveTimes },
+                    |m: &mut Uncertainties| { &mut m.CraneMoveTimes },
+                ));
+                fields.push(::protobuf::reflect::accessor::make_vec_accessor::<_, ::protobuf::types::ProtobufTypeDouble>(
+                    "HandoverReadyIntervals",
+                    |m: &Uncertainties| { &m.HandoverReadyIntervals },
+                    |m: &mut Uncertainties| { &mut m.HandoverReadyIntervals },
+                ));
+                ::protobuf::reflect::MessageDescriptor::new::<Uncertainties>(
+                    "Uncertainties",
+                    fields,
+                    file_descriptor_proto()
+                )
+            })
+        }
+    }
+
+    fn default_instance() -> &'static Uncertainties {
+        static mut instance: ::protobuf::lazy::Lazy<Uncertainties> = ::protobuf::lazy::Lazy {
+            lock: ::protobuf::lazy::ONCE_INIT,
+            ptr: 0 as *const Uncertainties,
+        };
+        unsafe {
+            instance.get(Uncertainties::new)
+        }
+    }
+}
+
+impl ::protobuf::Clear for Uncertainties {
+    fn clear(&mut self) {
+        self.ArrivalIntervals.clear();
+        self.CraneMoveTimes.clear();
+        self.HandoverReadyIntervals.clear();
+        self.unknown_fields.clear();
+    }
+}
+
+impl ::std::fmt::Debug for Uncertainties {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        ::protobuf::text_format::fmt(self, f)
+    }
+}
+
+impl ::protobuf::reflect::ProtobufValue for Uncertainties {
+    fn as_ref(&self) -> ::protobuf::reflect::ProtobufValueRef {
+        ::protobuf::reflect::ProtobufValueRef::Message(self)
+    }
+}
+
+#[derive(PartialEq,Clone,Default)]
 pub struct World {
     // message fields
     Now: ::protobuf::SingularPtrField<TimeStamp>,
@@ -2292,6 +2653,7 @@ pub struct World {
     Handover: ::protobuf::SingularPtrField<Handover>,
     Crane: ::protobuf::SingularPtrField<Crane>,
     KPIs: ::protobuf::SingularPtrField<Performance>,
+    ObservationData: ::protobuf::SingularPtrField<Uncertainties>,
     // special fields
     pub unknown_fields: ::protobuf::UnknownFields,
     pub cached_size: ::protobuf::CachedSize,
@@ -2497,6 +2859,39 @@ impl World {
     pub fn take_KPIs(&mut self) -> Performance {
         self.KPIs.take().unwrap_or_else(|| Performance::new())
     }
+
+    // optional .DynStacking.DataModel.Uncertainties ObservationData = 7;
+
+
+    pub fn get_ObservationData(&self) -> &Uncertainties {
+        self.ObservationData.as_ref().unwrap_or_else(|| Uncertainties::default_instance())
+    }
+    pub fn clear_ObservationData(&mut self) {
+        self.ObservationData.clear();
+    }
+
+    pub fn has_ObservationData(&self) -> bool {
+        self.ObservationData.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_ObservationData(&mut self, v: Uncertainties) {
+        self.ObservationData = ::protobuf::SingularPtrField::some(v);
+    }
+
+    // Mutable pointer to the field.
+    // If field is not initialized, it is initialized with default value first.
+    pub fn mut_ObservationData(&mut self) -> &mut Uncertainties {
+        if self.ObservationData.is_none() {
+            self.ObservationData.set_default();
+        }
+        self.ObservationData.as_mut().unwrap()
+    }
+
+    // Take field
+    pub fn take_ObservationData(&mut self) -> Uncertainties {
+        self.ObservationData.take().unwrap_or_else(|| Uncertainties::new())
+    }
 }
 
 impl ::protobuf::Message for World {
@@ -2531,6 +2926,11 @@ impl ::protobuf::Message for World {
                 return false;
             }
         };
+        for v in &self.ObservationData {
+            if !v.is_initialized() {
+                return false;
+            }
+        };
         true
     }
 
@@ -2555,6 +2955,9 @@ impl ::protobuf::Message for World {
                 },
                 6 => {
                     ::protobuf::rt::read_singular_message_into(wire_type, is, &mut self.KPIs)?;
+                },
+                7 => {
+                    ::protobuf::rt::read_singular_message_into(wire_type, is, &mut self.ObservationData)?;
                 },
                 _ => {
                     ::protobuf::rt::read_unknown_or_skip_group(field_number, wire_type, is, self.mut_unknown_fields())?;
@@ -2592,6 +2995,10 @@ impl ::protobuf::Message for World {
             let len = v.compute_size();
             my_size += 1 + ::protobuf::rt::compute_raw_varint32_size(len) + len;
         }
+        if let Some(ref v) = self.ObservationData.as_ref() {
+            let len = v.compute_size();
+            my_size += 1 + ::protobuf::rt::compute_raw_varint32_size(len) + len;
+        }
         my_size += ::protobuf::rt::unknown_fields_size(self.get_unknown_fields());
         self.cached_size.set(my_size);
         my_size
@@ -2625,6 +3032,11 @@ impl ::protobuf::Message for World {
         }
         if let Some(ref v) = self.KPIs.as_ref() {
             os.write_tag(6, ::protobuf::wire_format::WireTypeLengthDelimited)?;
+            os.write_raw_varint32(v.get_cached_size())?;
+            v.write_to_with_cached_sizes(os)?;
+        }
+        if let Some(ref v) = self.ObservationData.as_ref() {
+            os.write_tag(7, ::protobuf::wire_format::WireTypeLengthDelimited)?;
             os.write_raw_varint32(v.get_cached_size())?;
             v.write_to_with_cached_sizes(os)?;
         }
@@ -2700,6 +3112,11 @@ impl ::protobuf::Message for World {
                     |m: &World| { &m.KPIs },
                     |m: &mut World| { &mut m.KPIs },
                 ));
+                fields.push(::protobuf::reflect::accessor::make_singular_ptr_field_accessor::<_, ::protobuf::types::ProtobufTypeMessage<Uncertainties>>(
+                    "ObservationData",
+                    |m: &World| { &m.ObservationData },
+                    |m: &mut World| { &mut m.ObservationData },
+                ));
                 ::protobuf::reflect::MessageDescriptor::new::<World>(
                     "World",
                     fields,
@@ -2728,6 +3145,7 @@ impl ::protobuf::Clear for World {
         self.Handover.clear();
         self.Crane.clear();
         self.KPIs.clear();
+        self.ObservationData.clear();
         self.unknown_fields.clear();
     }
 }
@@ -2764,26 +3182,34 @@ static file_descriptor_proto_data: &'static [u8] = b"\
     !\n\nSequenceNr\x18\x02\x20\x01(\x05:\x010R\nSequenceNr\"n\n\x08Handover\
     \x12\x11\n\x02Id\x18\x01\x20\x01(\x05:\x010R\x02Id\x12\x1b\n\x05Ready\
     \x18\x02\x20\x01(\x08:\x05falseR\x05Ready\x122\n\x05Block\x18\x03\x20\
-    \x01(\x0b2\x1c.DynStacking.DataModel.BlockR\x05Block\"\xa7\x02\n\x0bPerf\
+    \x01(\x0b2\x1c.DynStacking.DataModel.BlockR\x05Block\"\xc0\x03\n\x0bPerf\
     ormance\x121\n\x12CraneManipulations\x18\x01\x20\x01(\x05:\x010R\x12Cran\
     eManipulations\x12-\n\x10ServiceLevelMean\x18\x02\x20\x01(\x01:\x010R\
     \x10ServiceLevelMean\x12%\n\x0cLeadTimeMean\x18\x03\x20\x01(\x01:\x010R\
     \x0cLeadTimeMean\x12+\n\x0fDeliveredBlocks\x18\x04\x20\x01(\x05:\x010R\
     \x0fDeliveredBlocks\x12/\n\x11TotalBlocksOnTime\x18\x05\x20\x01(\x05:\
     \x010R\x11TotalBlocksOnTime\x121\n\x12BlockedArrivalTime\x18\x06\x20\x01\
-    (\x01:\x010R\x12BlockedArrivalTime\"{\n\x05Stack\x12\x11\n\x02Id\x18\x01\
-    \x20\x01(\x05:\x010R\x02Id\x12\x1f\n\tMaxHeight\x18\x02\x20\x01(\x05:\
-    \x010R\tMaxHeight\x12>\n\x0bBottomToTop\x18\x03\x20\x03(\x0b2\x1c.DynSta\
-    cking.DataModel.BlockR\x0bBottomToTop\"2\n\tTimeStamp\x12%\n\x0cMilliSec\
-    onds\x18\x01\x20\x01(\x03:\x010R\x0cMilliSeconds\"\xda\x02\n\x05World\
-    \x122\n\x03Now\x18\x01\x20\x01(\x0b2\x20.DynStacking.DataModel.TimeStamp\
-    R\x03Now\x12<\n\nProduction\x18\x02\x20\x01(\x0b2\x1c.DynStacking.DataMo\
-    del.StackR\nProduction\x126\n\x07Buffers\x18\x03\x20\x03(\x0b2\x1c.DynSt\
-    acking.DataModel.StackR\x07Buffers\x12;\n\x08Handover\x18\x04\x20\x01(\
-    \x0b2\x1f.DynStacking.DataModel.HandoverR\x08Handover\x122\n\x05Crane\
-    \x18\x05\x20\x01(\x0b2\x1c.DynStacking.DataModel.CraneR\x05Crane\x126\n\
-    \x04KPIs\x18\x06\x20\x01(\x0b2\".DynStacking.DataModel.PerformanceR\x04K\
-    PIs\
+    (\x01:\x010R\x12BlockedArrivalTime\x12'\n\rTardinessMean\x18\x07\x20\x01\
+    (\x01:\x010R\rTardinessMean\x127\n\x15BufferUtilizationMean\x18\x08\x20\
+    \x01(\x01:\x010R\x15BufferUtilizationMean\x125\n\x14CraneUtilizationMean\
+    \x18\t\x20\x01(\x01:\x010R\x14CraneUtilizationMean\"{\n\x05Stack\x12\x11\
+    \n\x02Id\x18\x01\x20\x01(\x05:\x010R\x02Id\x12\x1f\n\tMaxHeight\x18\x02\
+    \x20\x01(\x05:\x010R\tMaxHeight\x12>\n\x0bBottomToTop\x18\x03\x20\x03(\
+    \x0b2\x1c.DynStacking.DataModel.BlockR\x0bBottomToTop\"2\n\tTimeStamp\
+    \x12%\n\x0cMilliSeconds\x18\x01\x20\x01(\x03:\x010R\x0cMilliSeconds\"\
+    \x9b\x01\n\rUncertainties\x12*\n\x10ArrivalIntervals\x18\x01\x20\x03(\
+    \x01R\x10ArrivalIntervals\x12&\n\x0eCraneMoveTimes\x18\x02\x20\x03(\x01R\
+    \x0eCraneMoveTimes\x126\n\x16HandoverReadyIntervals\x18\x03\x20\x03(\x01\
+    R\x16HandoverReadyIntervals\"\xaa\x03\n\x05World\x122\n\x03Now\x18\x01\
+    \x20\x01(\x0b2\x20.DynStacking.DataModel.TimeStampR\x03Now\x12<\n\nProdu\
+    ction\x18\x02\x20\x01(\x0b2\x1c.DynStacking.DataModel.StackR\nProduction\
+    \x126\n\x07Buffers\x18\x03\x20\x03(\x0b2\x1c.DynStacking.DataModel.Stack\
+    R\x07Buffers\x12;\n\x08Handover\x18\x04\x20\x01(\x0b2\x1f.DynStacking.Da\
+    taModel.HandoverR\x08Handover\x122\n\x05Crane\x18\x05\x20\x01(\x0b2\x1c.\
+    DynStacking.DataModel.CraneR\x05Crane\x126\n\x04KPIs\x18\x06\x20\x01(\
+    \x0b2\".DynStacking.DataModel.PerformanceR\x04KPIs\x12N\n\x0fObservation\
+    Data\x18\x07\x20\x01(\x0b2$.DynStacking.DataModel.UncertaintiesR\x0fObse\
+    rvationData\
 ";
 
 static mut file_descriptor_proto_lazy: ::protobuf::lazy::Lazy<::protobuf::descriptor::FileDescriptorProto> = ::protobuf::lazy::Lazy {

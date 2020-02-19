@@ -1,5 +1,5 @@
 [package]
-name = "dynstack_rust"
+name = "dynstack"
 version = "0.1.0"
 authors = ["Raggl Sebastian <sebastian.raggl@fh-hagenberg.at>"]
 edition = "2018"

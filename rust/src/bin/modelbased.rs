@@ -1,11 +1,9 @@
-mod brp;
-mod data_model;
-mod search;
-
-use brp::{prioritize_by_due_date, BrpState, Move};
-use data_model::{CraneMove, CraneSchedule, World};
+use dynstack::{
+    brp::{prioritize_by_due_date, BrpState, Move},
+    data_model::{CraneMove, CraneSchedule, World},
+    search::depth_first_search,
+};
 use protobuf::Message;
-use search::depth_first_search;
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     let mut args = std::env::args().skip(1);

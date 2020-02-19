@@ -1,4 +1,4 @@
-use crate::state::{BrpState, Move};
+use crate::brp::{BrpState, Move};
 
 /// Does a simple depth first search using forced moves starting from the initial BrpState.
 pub fn depth_first_search(initial: BrpState) -> Vec<Move> {
