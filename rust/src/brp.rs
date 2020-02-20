@@ -1,14 +1,25 @@
-use crate::data_model::World;
+use crate::{
+    data_model::{CraneMove, CraneSchedule, World},
+    search::depth_first_search,
+};
 use std::{collections::HashMap, iter::once};
 
 type StackId = i32;
 type BlockId = i32;
 type Priority = u32;
 
+/// Generate a schedule for the current world state by solving an restricted offline BRP
+pub fn calculate_schedule(world: &World) -> CraneSchedule {
+    let priorities = prioritize_by_due_date(world);
+    let initial_state = BrpState::new(world, priorities);
+    let solution = depth_first_search(initial_state);
+    create_schedule_from_solution(world, solution)
+}
+
 /// Assign a priority to each block based on its due date.
 /// This is not a good strategy but it is very simple.
 /// The block with the lowest priority (due date) has to be retrieved first.
-pub fn prioritize_by_due_date(world: &World) -> HashMap<BlockId, Priority> {
+fn prioritize_by_due_date(world: &World) -> HashMap<BlockId, Priority> {
     let mut all_blocks: Vec<_> = world
         .get_Production()
         .get_BottomToTop()
@@ -28,6 +39,24 @@ pub fn prioritize_by_due_date(world: &World) -> HashMap<BlockId, Priority> {
         .map(|block| block.get_Id())
         .zip(0..)
         .collect()
+}
+
+/// Translates the BRP solution into a CraneSchedule
+fn create_schedule_from_solution(world: &World, moves: Vec<Move>) -> CraneSchedule {
+    let mut schedule = CraneSchedule::new();
+    let handover = world.get_Handover();
+    let is_ready = handover.get_Ready();
+    for opt_mov in moves.into_iter().take(3) {
+        if !is_ready && opt_mov.tgt() == handover.get_Id() {
+            break;
+        }
+        let mut mov = CraneMove::new();
+        mov.set_BlockId(opt_mov.block());
+        mov.set_SourceId(opt_mov.src());
+        mov.set_TargetId(opt_mov.tgt());
+        schedule.mut_Moves().push(mov);
+    }
+    schedule
 }
 
 /// A block for the BRP
@@ -95,22 +124,25 @@ impl BrpState {
         let mut stacks = Vec::new();
         let prod = world.get_Production();
 
-        for stack in once(prod).chain(world.get_Buffers()) {
-            let blocks = stack
-                .get_BottomToTop()
-                .iter()
-                .map(|block| {
-                    let id = block.get_Id();
-                    let prio = *priorities.get(&id).unwrap_or(&10000);
-                    Block { id, prio }
-                })
-                .collect();
-            stacks.push(Stack {
-                id: stack.get_Id(),
-                max_height: stack.get_MaxHeight() as usize,
-                blocks,
-            });
-        }
+        let stacks = once(prod)
+            .chain(world.get_Buffers())
+            .map(|stack| {
+                let blocks = stack
+                    .get_BottomToTop()
+                    .iter()
+                    .map(|block| {
+                        let id = block.get_Id();
+                        let prio = *priorities.get(&id).unwrap_or(&10000);
+                        Block { id, prio }
+                    })
+                    .collect();
+                Stack {
+                    id: stack.get_Id(),
+                    max_height: stack.get_MaxHeight() as usize,
+                    blocks,
+                }
+            })
+            .collect();
 
         Self {
             stacks,

@@ -1,0 +1,23 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": ".NET Core Launch (console)",
+            "type": "coreclr",
+            "request": "launch",
+            "program": "${workspaceFolder}/csharp/bin/Debug/netcoreapp3.0/csharp.dll",
+            "args": [
+                "tcp://localhost:8080",
+                "tcp://localhost:8018",
+                "2c75b0ab-b93f-4a2d-8210-ac863e273b15",
+                "235"
+            ],
+            "cwd": "${workspaceFolder}",
+            "stopAtEntry": false,
+            "console": "internalConsole",
+        }
+    ]
+}

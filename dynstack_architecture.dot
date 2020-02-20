@@ -1,0 +1,69 @@
+digraph{
+compound=true;
+subgraph cluster_server{
+    label="server"
+    subgraph cluster_manager {
+        label="manager"
+        mgmt;
+        world_int
+        world_ext
+        crane_ext
+        crane_int
+        world_pub
+        mgmt->x[style=invis]
+        x[style=invis]
+    }
+    subgraph cluster_webapp { 
+        label="webapp"
+        experiment
+        visualization
+    }
+
+    subgraph cluster_sim { 
+        label="simulation1"
+        world_sim
+        crane_sim
+    }
+    simulation2 [shape="box"]
+    x -> simulation2 [ltail=cluster_manager]
+    simulation3 [shape="box"]
+    x -> simulation3 [ltail=cluster_manager]
+
+}
+
+
+
+
+subgraph cluster_user1{
+style=vis
+    label="user1"
+    subgraph cluster_opt { 
+        label="optimizer"
+        world_opt
+        crane_opt
+    }
+
+    browser [shape="box"]
+}
+
+user2[shape="box"]
+user2-> visualization [lhead=cluster_server]
+user3[shape="box"]
+user3->visualization [lhead=cluster_server]
+
+
+crane_opt->crane_ext -> crane_int -> crane_sim
+world_opt->world_ext-> world_int -> world_sim [dir=back]
+world_pub -> world_int[dir=back]
+mgmt-> experiment  [dir=both]
+world_pub -> visualization
+browser-> visualization [lhead=cluster_webapp]
+
+
+
+
+
+
+
+
+}

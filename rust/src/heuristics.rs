@@ -1,6 +1,13 @@
 use crate::data_model::{CraneMove, CraneSchedule, World};
 
-pub fn any_handover_move(world: &World, schedule: &mut CraneSchedule) {
+pub fn calculate_schedule(world: &World) -> CraneSchedule {
+    let mut schedule = CraneSchedule::new();
+    any_handover_move(world, &mut schedule);
+    free_production_stack(world, &mut schedule);
+    schedule
+}
+
+fn any_handover_move(world: &World, schedule: &mut CraneSchedule) {
     if !world.get_Handover().get_Ready() {
         return;
     }
@@ -18,7 +25,7 @@ pub fn any_handover_move(world: &World, schedule: &mut CraneSchedule) {
     }
 }
 
-pub fn free_production_stack(world: &World, schedule: &mut CraneSchedule) {
+fn free_production_stack(world: &World, schedule: &mut CraneSchedule) {
     if let Some(block) = world.get_Production().get_BottomToTop().last() {
         if let Some(free) = world
             .get_Buffers()

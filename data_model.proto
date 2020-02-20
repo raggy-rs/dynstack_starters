@@ -20,6 +20,7 @@ int32 BlockId = 1;
 int32 SourceId = 2;
 int32 TargetId = 3;
 int32 Sequence = 4;
+bool EmptyMove = 5;
 }
 message CraneSchedule {
 repeated CraneMove Moves = 1;

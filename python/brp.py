@@ -1,5 +1,30 @@
 import copy
 
+def optimize_crane_schedule(world):
+    if len(world.Crane.Schedule.Moves) > 0:
+        return None
+    priorities = prioritize_by_due_date(world)
+    initial = BrpState(world, priorities)
+    moves = depth_first_search(initial)
+    return create_schedule_from_solution(world, moves)
+
+def create_schedule_from_solution(world, moves):
+    schedule = CraneSchedule()
+    handover = world.Handover
+    is_ready = handover.Ready
+    for opt_mov in moves[:3]:
+        if not is_ready and opt_mov.tgt == handover.Id:
+            break
+        move = CraneMove()
+        move.BlockId = opt_mov.block
+        move.SourceId = opt_mov.src
+        move.TargetId = opt_mov.tgt
+        schedule.Moves.append(move)
+    if any(schedule.Moves):
+        return schedule
+    else:
+        return None
+
 def prioritize_by_due_date(world):
     all_blocks = world.Production.BottomToTop
     for stack in world.Buffers:

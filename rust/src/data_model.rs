@@ -725,6 +725,7 @@ pub struct CraneMove {
     pub SourceId: i32,
     pub TargetId: i32,
     pub Sequence: i32,
+    pub EmptyMove: bool,
     // special fields
     pub unknown_fields: ::protobuf::UnknownFields,
     pub cached_size: ::protobuf::CachedSize,
@@ -800,6 +801,21 @@ impl CraneMove {
     pub fn set_Sequence(&mut self, v: i32) {
         self.Sequence = v;
     }
+
+    // bool EmptyMove = 5;
+
+
+    pub fn get_EmptyMove(&self) -> bool {
+        self.EmptyMove
+    }
+    pub fn clear_EmptyMove(&mut self) {
+        self.EmptyMove = false;
+    }
+
+    // Param is passed by value, moved
+    pub fn set_EmptyMove(&mut self, v: bool) {
+        self.EmptyMove = v;
+    }
 }
 
 impl ::protobuf::Message for CraneMove {
@@ -839,6 +855,13 @@ impl ::protobuf::Message for CraneMove {
                     let tmp = is.read_int32()?;
                     self.Sequence = tmp;
                 },
+                5 => {
+                    if wire_type != ::protobuf::wire_format::WireTypeVarint {
+                        return ::std::result::Result::Err(::protobuf::rt::unexpected_wire_type(wire_type));
+                    }
+                    let tmp = is.read_bool()?;
+                    self.EmptyMove = tmp;
+                },
                 _ => {
                     ::protobuf::rt::read_unknown_or_skip_group(field_number, wire_type, is, self.mut_unknown_fields())?;
                 },
@@ -863,6 +886,9 @@ impl ::protobuf::Message for CraneMove {
         if self.Sequence != 0 {
             my_size += ::protobuf::rt::value_size(4, self.Sequence, ::protobuf::wire_format::WireTypeVarint);
         }
+        if self.EmptyMove != false {
+            my_size += 2;
+        }
         my_size += ::protobuf::rt::unknown_fields_size(self.get_unknown_fields());
         self.cached_size.set(my_size);
         my_size
@@ -880,6 +906,9 @@ impl ::protobuf::Message for CraneMove {
         }
         if self.Sequence != 0 {
             os.write_int32(4, self.Sequence)?;
+        }
+        if self.EmptyMove != false {
+            os.write_bool(5, self.EmptyMove)?;
         }
         os.write_unknown_fields(self.get_unknown_fields())?;
         ::std::result::Result::Ok(())
@@ -943,6 +972,11 @@ impl ::protobuf::Message for CraneMove {
                     |m: &CraneMove| { &m.Sequence },
                     |m: &mut CraneMove| { &mut m.Sequence },
                 ));
+                fields.push(::protobuf::reflect::accessor::make_simple_field_accessor::<_, ::protobuf::types::ProtobufTypeBool>(
+                    "EmptyMove",
+                    |m: &CraneMove| { &m.EmptyMove },
+                    |m: &mut CraneMove| { &mut m.EmptyMove },
+                ));
                 ::protobuf::reflect::MessageDescriptor::new::<CraneMove>(
                     "CraneMove",
                     fields,
@@ -969,6 +1003,7 @@ impl ::protobuf::Clear for CraneMove {
         self.SourceId = 0;
         self.TargetId = 0;
         self.Sequence = 0;
+        self.EmptyMove = false;
         self.unknown_fields.clear();
     }
 }
@@ -3073,41 +3108,42 @@ static file_descriptor_proto_data: &'static [u8] = b"\
     DynStacking.DataModel.BlockR\x04Load\x12@\n\x08Schedule\x18\x04\x20\x01(\
     \x0b2$.DynStacking.DataModel.CraneScheduleR\x08Schedule\x12&\n\x0eGirder\
     Position\x18\x05\x20\x01(\x01R\x0eGirderPosition\x12$\n\rHoistPosition\
-    \x18\x06\x20\x01(\x01R\rHoistPosition\"y\n\tCraneMove\x12\x18\n\x07Block\
-    Id\x18\x01\x20\x01(\x05R\x07BlockId\x12\x1a\n\x08SourceId\x18\x02\x20\
-    \x01(\x05R\x08SourceId\x12\x1a\n\x08TargetId\x18\x03\x20\x01(\x05R\x08Ta\
-    rgetId\x12\x1a\n\x08Sequence\x18\x04\x20\x01(\x05R\x08Sequence\"g\n\rCra\
-    neSchedule\x126\n\x05Moves\x18\x01\x20\x03(\x0b2\x20.DynStacking.DataMod\
-    el.CraneMoveR\x05Moves\x12\x1e\n\nSequenceNr\x18\x02\x20\x01(\x05R\nSequ\
-    enceNr\"d\n\x08Handover\x12\x0e\n\x02Id\x18\x01\x20\x01(\x05R\x02Id\x12\
-    \x14\n\x05Ready\x18\x02\x20\x01(\x08R\x05Ready\x122\n\x05Block\x18\x03\
-    \x20\x01(\x0b2\x1c.DynStacking.DataModel.BlockR\x05Block\"\xa5\x03\n\x0b\
-    Performance\x12.\n\x12CraneManipulations\x18\x01\x20\x01(\x05R\x12CraneM\
-    anipulations\x12*\n\x10ServiceLevelMean\x18\x02\x20\x01(\x01R\x10Service\
-    LevelMean\x12\"\n\x0cLeadTimeMean\x18\x03\x20\x01(\x01R\x0cLeadTimeMean\
-    \x12(\n\x0fDeliveredBlocks\x18\x04\x20\x01(\x05R\x0fDeliveredBlocks\x12,\
-    \n\x11TotalBlocksOnTime\x18\x05\x20\x01(\x05R\x11TotalBlocksOnTime\x12.\
-    \n\x12BlockedArrivalTime\x18\x06\x20\x01(\x01R\x12BlockedArrivalTime\x12\
-    $\n\rTardinessMean\x18\x07\x20\x01(\x01R\rTardinessMean\x124\n\x15Buffer\
-    UtilizationMean\x18\x08\x20\x01(\x01R\x15BufferUtilizationMean\x122\n\
-    \x14CraneUtilizationMean\x18\t\x20\x01(\x01R\x14CraneUtilizationMean\"u\
-    \n\x05Stack\x12\x0e\n\x02Id\x18\x01\x20\x01(\x05R\x02Id\x12\x1c\n\tMaxHe\
-    ight\x18\x02\x20\x01(\x05R\tMaxHeight\x12>\n\x0bBottomToTop\x18\x03\x20\
-    \x03(\x0b2\x1c.DynStacking.DataModel.BlockR\x0bBottomToTop\"/\n\tTimeSta\
-    mp\x12\"\n\x0cMilliSeconds\x18\x01\x20\x01(\x03R\x0cMilliSeconds\"\xa7\
-    \x01\n\rUncertainties\x12.\n\x10ArrivalIntervals\x18\x01\x20\x03(\x01R\
-    \x10ArrivalIntervalsB\x02\x10\0\x12*\n\x0eCraneMoveTimes\x18\x02\x20\x03\
-    (\x01R\x0eCraneMoveTimesB\x02\x10\0\x12:\n\x16HandoverReadyIntervals\x18\
-    \x03\x20\x03(\x01R\x16HandoverReadyIntervalsB\x02\x10\0\"\xaa\x03\n\x05W\
-    orld\x122\n\x03Now\x18\x01\x20\x01(\x0b2\x20.DynStacking.DataModel.TimeS\
-    tampR\x03Now\x12<\n\nProduction\x18\x02\x20\x01(\x0b2\x1c.DynStacking.Da\
-    taModel.StackR\nProduction\x126\n\x07Buffers\x18\x03\x20\x03(\x0b2\x1c.D\
-    ynStacking.DataModel.StackR\x07Buffers\x12;\n\x08Handover\x18\x04\x20\
-    \x01(\x0b2\x1f.DynStacking.DataModel.HandoverR\x08Handover\x122\n\x05Cra\
-    ne\x18\x05\x20\x01(\x0b2\x1c.DynStacking.DataModel.CraneR\x05Crane\x126\
-    \n\x04KPIs\x18\x06\x20\x01(\x0b2\".DynStacking.DataModel.PerformanceR\
-    \x04KPIs\x12N\n\x0fObservationData\x18\x07\x20\x01(\x0b2$.DynStacking.Da\
-    taModel.UncertaintiesR\x0fObservationDatab\x06proto3\
+    \x18\x06\x20\x01(\x01R\rHoistPosition\"\x97\x01\n\tCraneMove\x12\x18\n\
+    \x07BlockId\x18\x01\x20\x01(\x05R\x07BlockId\x12\x1a\n\x08SourceId\x18\
+    \x02\x20\x01(\x05R\x08SourceId\x12\x1a\n\x08TargetId\x18\x03\x20\x01(\
+    \x05R\x08TargetId\x12\x1a\n\x08Sequence\x18\x04\x20\x01(\x05R\x08Sequenc\
+    e\x12\x1c\n\tEmptyMove\x18\x05\x20\x01(\x08R\tEmptyMove\"g\n\rCraneSched\
+    ule\x126\n\x05Moves\x18\x01\x20\x03(\x0b2\x20.DynStacking.DataModel.Cran\
+    eMoveR\x05Moves\x12\x1e\n\nSequenceNr\x18\x02\x20\x01(\x05R\nSequenceNr\
+    \"d\n\x08Handover\x12\x0e\n\x02Id\x18\x01\x20\x01(\x05R\x02Id\x12\x14\n\
+    \x05Ready\x18\x02\x20\x01(\x08R\x05Ready\x122\n\x05Block\x18\x03\x20\x01\
+    (\x0b2\x1c.DynStacking.DataModel.BlockR\x05Block\"\xa5\x03\n\x0bPerforma\
+    nce\x12.\n\x12CraneManipulations\x18\x01\x20\x01(\x05R\x12CraneManipulat\
+    ions\x12*\n\x10ServiceLevelMean\x18\x02\x20\x01(\x01R\x10ServiceLevelMea\
+    n\x12\"\n\x0cLeadTimeMean\x18\x03\x20\x01(\x01R\x0cLeadTimeMean\x12(\n\
+    \x0fDeliveredBlocks\x18\x04\x20\x01(\x05R\x0fDeliveredBlocks\x12,\n\x11T\
+    otalBlocksOnTime\x18\x05\x20\x01(\x05R\x11TotalBlocksOnTime\x12.\n\x12Bl\
+    ockedArrivalTime\x18\x06\x20\x01(\x01R\x12BlockedArrivalTime\x12$\n\rTar\
+    dinessMean\x18\x07\x20\x01(\x01R\rTardinessMean\x124\n\x15BufferUtilizat\
+    ionMean\x18\x08\x20\x01(\x01R\x15BufferUtilizationMean\x122\n\x14CraneUt\
+    ilizationMean\x18\t\x20\x01(\x01R\x14CraneUtilizationMean\"u\n\x05Stack\
+    \x12\x0e\n\x02Id\x18\x01\x20\x01(\x05R\x02Id\x12\x1c\n\tMaxHeight\x18\
+    \x02\x20\x01(\x05R\tMaxHeight\x12>\n\x0bBottomToTop\x18\x03\x20\x03(\x0b\
+    2\x1c.DynStacking.DataModel.BlockR\x0bBottomToTop\"/\n\tTimeStamp\x12\"\
+    \n\x0cMilliSeconds\x18\x01\x20\x01(\x03R\x0cMilliSeconds\"\xa7\x01\n\rUn\
+    certainties\x12.\n\x10ArrivalIntervals\x18\x01\x20\x03(\x01R\x10ArrivalI\
+    ntervalsB\x02\x10\0\x12*\n\x0eCraneMoveTimes\x18\x02\x20\x03(\x01R\x0eCr\
+    aneMoveTimesB\x02\x10\0\x12:\n\x16HandoverReadyIntervals\x18\x03\x20\x03\
+    (\x01R\x16HandoverReadyIntervalsB\x02\x10\0\"\xaa\x03\n\x05World\x122\n\
+    \x03Now\x18\x01\x20\x01(\x0b2\x20.DynStacking.DataModel.TimeStampR\x03No\
+    w\x12<\n\nProduction\x18\x02\x20\x01(\x0b2\x1c.DynStacking.DataModel.Sta\
+    ckR\nProduction\x126\n\x07Buffers\x18\x03\x20\x03(\x0b2\x1c.DynStacking.\
+    DataModel.StackR\x07Buffers\x12;\n\x08Handover\x18\x04\x20\x01(\x0b2\x1f\
+    .DynStacking.DataModel.HandoverR\x08Handover\x122\n\x05Crane\x18\x05\x20\
+    \x01(\x0b2\x1c.DynStacking.DataModel.CraneR\x05Crane\x126\n\x04KPIs\x18\
+    \x06\x20\x01(\x0b2\".DynStacking.DataModel.PerformanceR\x04KPIs\x12N\n\
+    \x0fObservationData\x18\x07\x20\x01(\x0b2$.DynStacking.DataModel.Uncerta\
+    intiesR\x0fObservationDatab\x06proto3\
 ";
 
 static mut file_descriptor_proto_lazy: ::protobuf::lazy::Lazy<::protobuf::descriptor::FileDescriptorProto> = ::protobuf::lazy::Lazy {
