@@ -3,14 +3,14 @@ What is this?
 
 This repository contains starting kits for the dynamic stacking competition @ GECCO 2020.
 Starting kits are avialable in multiple languages:
-    * Rust
-    * Python
-    * C#
+* Rust
+* Python
+* C#
 
 The starting kit show how to:
-    * Connect to the competition server using zeromq.
-    * Serialize and deserialize the messages using protobuf
-    * Plan a crane schedule for a given world state
+* Connect to the competition server using zeromq.
+* Serialize and deserialize the messages using protobuf
+* Plan a crane schedule for a given world state
 
 The starting kits do not implement good solutions to the problem, but they are fully functioning.
 Simply checkout this repository choose a language run the starting kit and you should be able run your first training simulation and observe it working in the visualization page. For instructions on how to run a specific solver check out the readme in the solvers folder.
@@ -22,19 +22,19 @@ There are a number of possible approaches to solving dynamic optimization proble
 The simplest one is using a set of rules / heuristics to implement an online solver what we call the rule based approach.
 The process is illustrated in the following diagram:
 
-   +-------------+   +-------------+   +-------------+
-.->| World state |-->| Rules       |-->| Crane       |->.
-|  +-------------+   +-------------+   +-------------+  |
-'-------------------------------------------------------'
+       +-------------+   +-------------+   +-------------+
+    .->| World state |-->| Rules       |-->| Crane       |->.
+    |  +-------------+   +-------------+   +-------------+  |
+    '-------------------------------------------------------'
 
 A little bit more involved is the model based approach where we translate the world state into a model we than optimize the model and translate the result into like in the following diagram:
 
-                     +---------------+
-   +-------------+   | Model         |   +-------------+
-.->| World state |-->| Optimize      |-->| Crane       |->.
-|  +-------------+   | Into Schedule |   +-------------+  |
-|                    +---------------+                    |
-'---------------------------------------------------------'
+                         +---------------+
+       +-------------+   | Model         |   +-------------+
+    .->| World state |-->| Optimize      |-->| Crane       |->.
+    |  +-------------+   | Into Schedule |   +-------------+  |
+    |                    +---------------+                    |
+    '---------------------------------------------------------'
 
 All starter kits show the basics of how to implement both of this approaches.
 
