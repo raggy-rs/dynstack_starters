@@ -5,69 +5,8 @@ using DynStacking.DataModel;
 
 namespace Dynstacking
 {
-    public class ModelBasedOptimizer
-    {
-        World world;
-        public ModelBasedOptimizer(World world)
-        {
-            this.world = world;
-        }
-        public void CalculateSchedule(CraneSchedule schedule)
-        {
-            var priorities = PrioritizeByDueDate();
-            var initalState = new BrpState(world, priorities);
-            var solution = DepthFirstSearch(initalState);
-            FillScheduleFromSolution(solution, schedule);
-        }
 
-        public Dictionary<int, int> PrioritizeByDueDate()
-        {
-            return world.Production.BottomToTop
-                .Concat(world.Buffers
-                    .SelectMany(stack => stack.BottomToTop))
-                .OrderBy(block => block.Due.MilliSeconds)
-                .Select((block, Prio) => new { block.Id, Prio })
-                .ToDictionary(x => x.Id, x => x.Prio);
-        }
-
-        public List<CraneMove> DepthFirstSearch(BrpState initial)
-        {
-            var budget = 10000;
-            List<CraneMove> best = null;
-            var stack = new Stack<BrpState>();
-            stack.Push(initial);
-
-            while (stack.Count > 0 && budget > 0)
-            {
-                budget -= 1;
-                var state = stack.Pop();
-                if (state.IsSolved)
-                {
-                    if (best == null || best.Count > state.Moves.Count)
-                    {
-                        best = state.Moves;
-                    }
-                }
-                else
-                {
-                    foreach (var move in state.ForcedMoves())
-                    {
-                        stack.Push(state.Apply(move));
-                    }
-                }
-            }
-
-            return best;
-        }
-        public void FillScheduleFromSolution(List<CraneMove> solution, CraneSchedule schedule)
-        {
-            var handover = world.Handover;
-            schedule.Moves.AddRange(solution
-                .Take(3)
-                .TakeWhile(move => handover.Ready || move.TargetId != handover.Id)
-            );
-        }
-    }
+    /// A stack for the BlockRelocationProblem
     public class Stack
     {
         public int Id { get; }
@@ -94,6 +33,8 @@ namespace Dynstacking
         public Block MostUrgent => Blocks.MinBy(block => block.Prio);
 
     }
+
+    /// A block for the BRP
     public class Block
     {
         public Block(int id, int prio)
@@ -105,6 +46,9 @@ namespace Dynstacking
         public int Prio { get; }
     }
 
+    /// The state information for simple constrained offline BlockRelocationProblem (BRP)
+    /// For each state we can get the valid moves in this state and we can apply a move to get a new state.
+    /// This can be used to implement a simple search algorithm.
     public class BrpState
     {
         public List<CraneMove> Moves { get; }
@@ -114,6 +58,7 @@ namespace Dynstacking
         private int HandoverId { get; }
         private int ProductionId { get; }
 
+        /// Construct a new BRP from a given world state and an mapping from blocks to priorities.
         public BrpState(World world, Dictionary<int, int> priorities)
         {
             Moves = new List<CraneMove>();
@@ -136,6 +81,9 @@ namespace Dynstacking
         public bool IsSolved => !NotEmptyStacks.Any();
         IEnumerable<Stack> NotFullStacks => Stacks.Where(x => x.Blocks.Count < x.MaxHeight);
         IEnumerable<Stack> NotEmptyStacks => Stacks.Where(x => x.Blocks.Count > 0);
+
+        /// Fills the moves parameter with all forced moves that can be applied to this state.
+        /// Forced moves are those that either remove the next block or relocate blocks that prevent the removal of the next block.
         public List<CraneMove> ForcedMoves()
         {
             var possible = new List<CraneMove>();

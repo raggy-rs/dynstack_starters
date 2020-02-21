@@ -1,12 +1,14 @@
 use crate::data_model::{CraneMove, CraneSchedule, World};
 
+/// Use simple heuristics to come up with a crane schedule.
 pub fn calculate_schedule(world: &World) -> CraneSchedule {
     let mut schedule = CraneSchedule::new();
     any_handover_move(world, &mut schedule);
-    free_production_stack(world, &mut schedule);
+    clear_production_stack(world, &mut schedule);
     schedule
 }
 
+/// If any block on top of a stack can be moved to the handover schedule this move.
 fn any_handover_move(world: &World, schedule: &mut CraneSchedule) {
     if !world.get_Handover().get_Ready() {
         return;
@@ -25,7 +27,8 @@ fn any_handover_move(world: &World, schedule: &mut CraneSchedule) {
     }
 }
 
-fn free_production_stack(world: &World, schedule: &mut CraneSchedule) {
+/// If the top block of the production stack can be put on a buffer schedule this move.
+fn clear_production_stack(world: &World, schedule: &mut CraneSchedule) {
     if let Some(block) = world.get_Production().get_BottomToTop().last() {
         if let Some(free) = world
             .get_Buffers()

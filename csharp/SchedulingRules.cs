@@ -5,11 +5,14 @@ namespace Dynstacking
 {
     public class SchedulingRules
     {
+        /// Use simple heuristics to come up with a crane schedule.
         public static void MakeSchedule(World world, CraneSchedule schedule)
         {
             AnyHandoverMove(world, schedule);
-            FreeProductionStack(world, schedule);
+            ClearProductionStack(world, schedule);
         }
+
+        /// If any block on top of a stack can be moved to the handover schedule this move.
         private static void AnyHandoverMove(World world, CraneSchedule schedule)
         {
             if (!world.Handover.Ready)
@@ -34,7 +37,9 @@ namespace Dynstacking
             }
 
         }
-        private static void FreeProductionStack(World world, CraneSchedule schedule)
+
+        /// If the top block of the production stack can be put on a buffer schedule this move.
+        private static void ClearProductionStack(World world, CraneSchedule schedule)
         {
             var blocks = world.Production.BottomToTop.Count;
             if (blocks > 0)
