@@ -3,7 +3,7 @@ mod data_model;
 mod heuristics;
 mod search;
 
-use data_model::{CraneMove, CraneSchedule, World};
+use data_model::{CraneSchedule, World};
 use protobuf::Message;
 #[derive(Debug, Copy, Clone)]
 enum OptimizerType {

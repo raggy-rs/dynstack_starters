@@ -121,7 +121,6 @@ pub struct BrpState {
 impl BrpState {
     /// Construct a new BRP from a given world state and an mapping from blocks to priorities.
     pub fn new(world: &World, priorities: HashMap<BlockId, Priority>) -> Self {
-        let mut stacks = Vec::new();
         let prod = world.get_Production();
 
         let stacks = once(prod)
