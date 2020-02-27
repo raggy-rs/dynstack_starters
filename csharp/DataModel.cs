@@ -32,44 +32,48 @@ namespace DynStacking.DataModel {
             "ZBgDIAEoCzIcLkR5blN0YWNraW5nLkRhdGFNb2RlbC5CbG9jaxI2CghTY2hl",
             "ZHVsZRgEIAEoCzIkLkR5blN0YWNraW5nLkRhdGFNb2RlbC5DcmFuZVNjaGVk",
             "dWxlEhYKDkdpcmRlclBvc2l0aW9uGAUgASgBEhUKDUhvaXN0UG9zaXRpb24Y",
-            "BiABKAEiUgoJQ3JhbmVNb3ZlEg8KB0Jsb2NrSWQYASABKAUSEAoIU291cmNl",
-            "SWQYAiABKAUSEAoIVGFyZ2V0SWQYAyABKAUSEAoIU2VxdWVuY2UYBCABKAUi",
-            "VAoNQ3JhbmVTY2hlZHVsZRIvCgVNb3ZlcxgBIAMoCzIgLkR5blN0YWNraW5n",
-            "LkRhdGFNb2RlbC5DcmFuZU1vdmUSEgoKU2VxdWVuY2VOchgCIAEoBSJSCghI",
-            "YW5kb3ZlchIKCgJJZBgBIAEoBRINCgVSZWFkeRgCIAEoCBIrCgVCbG9jaxgD",
-            "IAEoCzIcLkR5blN0YWNraW5nLkRhdGFNb2RlbC5CbG9jayL9AQoLUGVyZm9y",
-            "bWFuY2USGgoSQ3JhbmVNYW5pcHVsYXRpb25zGAEgASgFEhgKEFNlcnZpY2VM",
-            "ZXZlbE1lYW4YAiABKAESFAoMTGVhZFRpbWVNZWFuGAMgASgBEhcKD0RlbGl2",
-            "ZXJlZEJsb2NrcxgEIAEoBRIZChFUb3RhbEJsb2Nrc09uVGltZRgFIAEoBRIa",
-            "ChJCbG9ja2VkQXJyaXZhbFRpbWUYBiABKAESFQoNVGFyZGluZXNzTWVhbhgH",
-            "IAEoARIdChVCdWZmZXJVdGlsaXphdGlvbk1lYW4YCCABKAESHAoUQ3JhbmVV",
-            "dGlsaXphdGlvbk1lYW4YCSABKAEiWQoFU3RhY2sSCgoCSWQYASABKAUSEQoJ",
-            "TWF4SGVpZ2h0GAIgASgFEjEKC0JvdHRvbVRvVG9wGAMgAygLMhwuRHluU3Rh",
-            "Y2tpbmcuRGF0YU1vZGVsLkJsb2NrIiEKCVRpbWVTdGFtcBIUCgxNaWxsaVNl",
-            "Y29uZHMYASABKAMibQoNVW5jZXJ0YWludGllcxIcChBBcnJpdmFsSW50ZXJ2",
-            "YWxzGAEgAygBQgIQABIaCg5DcmFuZU1vdmVUaW1lcxgCIAMoAUICEAASIgoW",
-            "SGFuZG92ZXJSZWFkeUludGVydmFscxgDIAMoAUICEAAi6AIKBVdvcmxkEi0K",
-            "A05vdxgBIAEoCzIgLkR5blN0YWNraW5nLkRhdGFNb2RlbC5UaW1lU3RhbXAS",
-            "MAoKUHJvZHVjdGlvbhgCIAEoCzIcLkR5blN0YWNraW5nLkRhdGFNb2RlbC5T",
-            "dGFjaxItCgdCdWZmZXJzGAMgAygLMhwuRHluU3RhY2tpbmcuRGF0YU1vZGVs",
-            "LlN0YWNrEjEKCEhhbmRvdmVyGAQgASgLMh8uRHluU3RhY2tpbmcuRGF0YU1v",
-            "ZGVsLkhhbmRvdmVyEisKBUNyYW5lGAUgASgLMhwuRHluU3RhY2tpbmcuRGF0",
-            "YU1vZGVsLkNyYW5lEjAKBEtQSXMYBiABKAsyIi5EeW5TdGFja2luZy5EYXRh",
-            "TW9kZWwuUGVyZm9ybWFuY2USPQoPT2JzZXJ2YXRpb25EYXRhGAcgASgLMiQu",
-            "RHluU3RhY2tpbmcuRGF0YU1vZGVsLlVuY2VydGFpbnRpZXNiBnByb3RvMw=="));
+            "BiABKAEiZQoJQ3JhbmVNb3ZlEg8KB0Jsb2NrSWQYASABKAUSEAoIU291cmNl",
+            "SWQYAiABKAUSEAoIVGFyZ2V0SWQYAyABKAUSEAoIU2VxdWVuY2UYBCABKAUS",
+            "EQoJRW1wdHlNb3ZlGAUgASgIIlQKDUNyYW5lU2NoZWR1bGUSLwoFTW92ZXMY",
+            "ASADKAsyIC5EeW5TdGFja2luZy5EYXRhTW9kZWwuQ3JhbmVNb3ZlEhIKClNl",
+            "cXVlbmNlTnIYAiABKAUiUgoISGFuZG92ZXISCgoCSWQYASABKAUSDQoFUmVh",
+            "ZHkYAiABKAgSKwoFQmxvY2sYAyABKAsyHC5EeW5TdGFja2luZy5EYXRhTW9k",
+            "ZWwuQmxvY2sivwIKC1BlcmZvcm1hbmNlEhoKEkNyYW5lTWFuaXB1bGF0aW9u",
+            "cxgBIAEoBRIYChBTZXJ2aWNlTGV2ZWxNZWFuGAIgASgBEhQKDExlYWRUaW1l",
+            "TWVhbhgDIAEoARIXCg9EZWxpdmVyZWRCbG9ja3MYBCABKAUSGQoRVG90YWxC",
+            "bG9ja3NPblRpbWUYBSABKAUSGgoSQmxvY2tlZEFycml2YWxUaW1lGAYgASgB",
+            "EhUKDVRhcmRpbmVzc01lYW4YByABKAESHQoVQnVmZmVyVXRpbGl6YXRpb25N",
+            "ZWFuGAggASgBEhwKFENyYW5lVXRpbGl6YXRpb25NZWFuGAkgASgBEh8KF0hh",
+            "bmRvdmVyVXRpbGl6YXRpb25NZWFuGAogASgBEh8KF1Vwc3RyZWFtVXRpbGl6",
+            "YXRpb25NZWFuGAsgASgBIlkKBVN0YWNrEgoKAklkGAEgASgFEhEKCU1heEhl",
+            "aWdodBgCIAEoBRIxCgtCb3R0b21Ub1RvcBgDIAMoCzIcLkR5blN0YWNraW5n",
+            "LkRhdGFNb2RlbC5CbG9jayIhCglUaW1lU3RhbXASFAoMTWlsbGlTZWNvbmRz",
+            "GAEgASgDIm0KDVVuY2VydGFpbnRpZXMSHAoQQXJyaXZhbEludGVydmFscxgB",
+            "IAMoAUICEAASGgoOQ3JhbmVNb3ZlVGltZXMYAiADKAFCAhAAEiIKFkhhbmRv",
+            "dmVyUmVhZHlJbnRlcnZhbHMYAyADKAFCAhAAIqADCgVXb3JsZBItCgNOb3cY",
+            "ASABKAsyIC5EeW5TdGFja2luZy5EYXRhTW9kZWwuVGltZVN0YW1wEjAKClBy",
+            "b2R1Y3Rpb24YAiABKAsyHC5EeW5TdGFja2luZy5EYXRhTW9kZWwuU3RhY2sS",
+            "LQoHQnVmZmVycxgDIAMoCzIcLkR5blN0YWNraW5nLkRhdGFNb2RlbC5TdGFj",
+            "axIxCghIYW5kb3ZlchgEIAEoCzIfLkR5blN0YWNraW5nLkRhdGFNb2RlbC5I",
+            "YW5kb3ZlchIrCgVDcmFuZRgFIAEoCzIcLkR5blN0YWNraW5nLkRhdGFNb2Rl",
+            "bC5DcmFuZRIwCgRLUElzGAYgASgLMiIuRHluU3RhY2tpbmcuRGF0YU1vZGVs",
+            "LlBlcmZvcm1hbmNlEj0KD09ic2VydmF0aW9uRGF0YRgHIAEoCzIkLkR5blN0",
+            "YWNraW5nLkRhdGFNb2RlbC5VbmNlcnRhaW50aWVzEjYKDEludmFsaWRNb3Zl",
+            "cxgIIAMoCzIgLkR5blN0YWNraW5nLkRhdGFNb2RlbC5DcmFuZU1vdmViBnBy",
+            "b3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::DynStacking.DataModel.Block), global::DynStacking.DataModel.Block.Parser, new[]{ "Id", "Release", "Due", "Ready" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::DynStacking.DataModel.Crane), global::DynStacking.DataModel.Crane.Parser, new[]{ "Id", "LocationId", "Load", "Schedule", "GirderPosition", "HoistPosition" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::DynStacking.DataModel.CraneMove), global::DynStacking.DataModel.CraneMove.Parser, new[]{ "BlockId", "SourceId", "TargetId", "Sequence" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::DynStacking.DataModel.CraneMove), global::DynStacking.DataModel.CraneMove.Parser, new[]{ "BlockId", "SourceId", "TargetId", "Sequence", "EmptyMove" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::DynStacking.DataModel.CraneSchedule), global::DynStacking.DataModel.CraneSchedule.Parser, new[]{ "Moves", "SequenceNr" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::DynStacking.DataModel.Handover), global::DynStacking.DataModel.Handover.Parser, new[]{ "Id", "Ready", "Block" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::DynStacking.DataModel.Performance), global::DynStacking.DataModel.Performance.Parser, new[]{ "CraneManipulations", "ServiceLevelMean", "LeadTimeMean", "DeliveredBlocks", "TotalBlocksOnTime", "BlockedArrivalTime", "TardinessMean", "BufferUtilizationMean", "CraneUtilizationMean" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::DynStacking.DataModel.Performance), global::DynStacking.DataModel.Performance.Parser, new[]{ "CraneManipulations", "ServiceLevelMean", "LeadTimeMean", "DeliveredBlocks", "TotalBlocksOnTime", "BlockedArrivalTime", "TardinessMean", "BufferUtilizationMean", "CraneUtilizationMean", "HandoverUtilizationMean", "UpstreamUtilizationMean" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::DynStacking.DataModel.Stack), global::DynStacking.DataModel.Stack.Parser, new[]{ "Id", "MaxHeight", "BottomToTop" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::DynStacking.DataModel.TimeStamp), global::DynStacking.DataModel.TimeStamp.Parser, new[]{ "MilliSeconds" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::DynStacking.DataModel.Uncertainties), global::DynStacking.DataModel.Uncertainties.Parser, new[]{ "ArrivalIntervals", "CraneMoveTimes", "HandoverReadyIntervals" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::DynStacking.DataModel.World), global::DynStacking.DataModel.World.Parser, new[]{ "Now", "Production", "Buffers", "Handover", "Crane", "KPIs", "ObservationData" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::DynStacking.DataModel.World), global::DynStacking.DataModel.World.Parser, new[]{ "Now", "Production", "Buffers", "Handover", "Crane", "KPIs", "ObservationData", "InvalidMoves" }, null, null, null)
           }));
     }
     #endregion
@@ -611,6 +615,7 @@ namespace DynStacking.DataModel {
       sourceId_ = other.sourceId_;
       targetId_ = other.targetId_;
       sequence_ = other.sequence_;
+      emptyMove_ = other.emptyMove_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -663,6 +668,17 @@ namespace DynStacking.DataModel {
       }
     }
 
+    /// <summary>Field number for the "EmptyMove" field.</summary>
+    public const int EmptyMoveFieldNumber = 5;
+    private bool emptyMove_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool EmptyMove {
+      get { return emptyMove_; }
+      set {
+        emptyMove_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as CraneMove);
@@ -680,6 +696,7 @@ namespace DynStacking.DataModel {
       if (SourceId != other.SourceId) return false;
       if (TargetId != other.TargetId) return false;
       if (Sequence != other.Sequence) return false;
+      if (EmptyMove != other.EmptyMove) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -690,6 +707,7 @@ namespace DynStacking.DataModel {
       if (SourceId != 0) hash ^= SourceId.GetHashCode();
       if (TargetId != 0) hash ^= TargetId.GetHashCode();
       if (Sequence != 0) hash ^= Sequence.GetHashCode();
+      if (EmptyMove != false) hash ^= EmptyMove.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -719,6 +737,10 @@ namespace DynStacking.DataModel {
         output.WriteRawTag(32);
         output.WriteInt32(Sequence);
       }
+      if (EmptyMove != false) {
+        output.WriteRawTag(40);
+        output.WriteBool(EmptyMove);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -738,6 +760,9 @@ namespace DynStacking.DataModel {
       }
       if (Sequence != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Sequence);
+      }
+      if (EmptyMove != false) {
+        size += 1 + 1;
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -761,6 +786,9 @@ namespace DynStacking.DataModel {
       }
       if (other.Sequence != 0) {
         Sequence = other.Sequence;
+      }
+      if (other.EmptyMove != false) {
+        EmptyMove = other.EmptyMove;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -787,6 +815,10 @@ namespace DynStacking.DataModel {
           }
           case 32: {
             Sequence = input.ReadInt32();
+            break;
+          }
+          case 40: {
+            EmptyMove = input.ReadBool();
             break;
           }
         }
@@ -1169,6 +1201,8 @@ namespace DynStacking.DataModel {
       tardinessMean_ = other.tardinessMean_;
       bufferUtilizationMean_ = other.bufferUtilizationMean_;
       craneUtilizationMean_ = other.craneUtilizationMean_;
+      handoverUtilizationMean_ = other.handoverUtilizationMean_;
+      upstreamUtilizationMean_ = other.upstreamUtilizationMean_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -1276,6 +1310,28 @@ namespace DynStacking.DataModel {
       }
     }
 
+    /// <summary>Field number for the "HandoverUtilizationMean" field.</summary>
+    public const int HandoverUtilizationMeanFieldNumber = 10;
+    private double handoverUtilizationMean_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public double HandoverUtilizationMean {
+      get { return handoverUtilizationMean_; }
+      set {
+        handoverUtilizationMean_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "UpstreamUtilizationMean" field.</summary>
+    public const int UpstreamUtilizationMeanFieldNumber = 11;
+    private double upstreamUtilizationMean_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public double UpstreamUtilizationMean {
+      get { return upstreamUtilizationMean_; }
+      set {
+        upstreamUtilizationMean_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as Performance);
@@ -1298,6 +1354,8 @@ namespace DynStacking.DataModel {
       if (!pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.Equals(TardinessMean, other.TardinessMean)) return false;
       if (!pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.Equals(BufferUtilizationMean, other.BufferUtilizationMean)) return false;
       if (!pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.Equals(CraneUtilizationMean, other.CraneUtilizationMean)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.Equals(HandoverUtilizationMean, other.HandoverUtilizationMean)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.Equals(UpstreamUtilizationMean, other.UpstreamUtilizationMean)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -1313,6 +1371,8 @@ namespace DynStacking.DataModel {
       if (TardinessMean != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(TardinessMean);
       if (BufferUtilizationMean != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(BufferUtilizationMean);
       if (CraneUtilizationMean != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(CraneUtilizationMean);
+      if (HandoverUtilizationMean != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(HandoverUtilizationMean);
+      if (UpstreamUtilizationMean != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(UpstreamUtilizationMean);
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -1362,6 +1422,14 @@ namespace DynStacking.DataModel {
         output.WriteRawTag(73);
         output.WriteDouble(CraneUtilizationMean);
       }
+      if (HandoverUtilizationMean != 0D) {
+        output.WriteRawTag(81);
+        output.WriteDouble(HandoverUtilizationMean);
+      }
+      if (UpstreamUtilizationMean != 0D) {
+        output.WriteRawTag(89);
+        output.WriteDouble(UpstreamUtilizationMean);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -1395,6 +1463,12 @@ namespace DynStacking.DataModel {
         size += 1 + 8;
       }
       if (CraneUtilizationMean != 0D) {
+        size += 1 + 8;
+      }
+      if (HandoverUtilizationMean != 0D) {
+        size += 1 + 8;
+      }
+      if (UpstreamUtilizationMean != 0D) {
         size += 1 + 8;
       }
       if (_unknownFields != null) {
@@ -1434,6 +1508,12 @@ namespace DynStacking.DataModel {
       }
       if (other.CraneUtilizationMean != 0D) {
         CraneUtilizationMean = other.CraneUtilizationMean;
+      }
+      if (other.HandoverUtilizationMean != 0D) {
+        HandoverUtilizationMean = other.HandoverUtilizationMean;
+      }
+      if (other.UpstreamUtilizationMean != 0D) {
+        UpstreamUtilizationMean = other.UpstreamUtilizationMean;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -1480,6 +1560,14 @@ namespace DynStacking.DataModel {
           }
           case 73: {
             CraneUtilizationMean = input.ReadDouble();
+            break;
+          }
+          case 81: {
+            HandoverUtilizationMean = input.ReadDouble();
+            break;
+          }
+          case 89: {
+            UpstreamUtilizationMean = input.ReadDouble();
             break;
           }
         }
@@ -1990,6 +2078,7 @@ namespace DynStacking.DataModel {
       crane_ = other.crane_ != null ? other.crane_.Clone() : null;
       kPIs_ = other.kPIs_ != null ? other.kPIs_.Clone() : null;
       observationData_ = other.observationData_ != null ? other.observationData_.Clone() : null;
+      invalidMoves_ = other.invalidMoves_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -2074,6 +2163,16 @@ namespace DynStacking.DataModel {
       }
     }
 
+    /// <summary>Field number for the "InvalidMoves" field.</summary>
+    public const int InvalidMovesFieldNumber = 8;
+    private static readonly pb::FieldCodec<global::DynStacking.DataModel.CraneMove> _repeated_invalidMoves_codec
+        = pb::FieldCodec.ForMessage(66, global::DynStacking.DataModel.CraneMove.Parser);
+    private readonly pbc::RepeatedField<global::DynStacking.DataModel.CraneMove> invalidMoves_ = new pbc::RepeatedField<global::DynStacking.DataModel.CraneMove>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<global::DynStacking.DataModel.CraneMove> InvalidMoves {
+      get { return invalidMoves_; }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as World);
@@ -2094,6 +2193,7 @@ namespace DynStacking.DataModel {
       if (!object.Equals(Crane, other.Crane)) return false;
       if (!object.Equals(KPIs, other.KPIs)) return false;
       if (!object.Equals(ObservationData, other.ObservationData)) return false;
+      if(!invalidMoves_.Equals(other.invalidMoves_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -2107,6 +2207,7 @@ namespace DynStacking.DataModel {
       if (crane_ != null) hash ^= Crane.GetHashCode();
       if (kPIs_ != null) hash ^= KPIs.GetHashCode();
       if (observationData_ != null) hash ^= ObservationData.GetHashCode();
+      hash ^= invalidMoves_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -2145,6 +2246,7 @@ namespace DynStacking.DataModel {
         output.WriteRawTag(58);
         output.WriteMessage(ObservationData);
       }
+      invalidMoves_.WriteTo(output, _repeated_invalidMoves_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -2172,6 +2274,7 @@ namespace DynStacking.DataModel {
       if (observationData_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(ObservationData);
       }
+      size += invalidMoves_.CalculateSize(_repeated_invalidMoves_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -2220,6 +2323,7 @@ namespace DynStacking.DataModel {
         }
         ObservationData.MergeFrom(other.ObservationData);
       }
+      invalidMoves_.Add(other.invalidMoves_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -2275,6 +2379,10 @@ namespace DynStacking.DataModel {
               ObservationData = new global::DynStacking.DataModel.Uncertainties();
             }
             input.ReadMessage(ObservationData);
+            break;
+          }
+          case 66: {
+            invalidMoves_.AddEntriesFrom(input, _repeated_invalidMoves_codec);
             break;
           }
         }

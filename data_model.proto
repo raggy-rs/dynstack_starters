@@ -41,6 +41,8 @@ double BlockedArrivalTime = 6;
 double TardinessMean = 7;
 double BufferUtilizationMean = 8;
 double CraneUtilizationMean = 9;
+double HandoverUtilizationMean = 10;
+double UpstreamUtilizationMean = 11;
 }
 message Stack {
 int32 Id = 1;
@@ -63,4 +65,5 @@ Handover Handover = 4;
 Crane Crane = 5;
 Performance KPIs = 6;
 Uncertainties ObservationData = 7;
-} 
+repeated CraneMove InvalidMoves = 8;
+}
