@@ -1,4 +1,5 @@
 import copy
+from data_model_pb2 import World, CraneSchedule, CraneMove
 
 def optimize_crane_schedule(world):
     if len(world.Crane.Schedule.Moves) > 0:
