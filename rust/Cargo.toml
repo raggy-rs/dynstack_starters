@@ -7,7 +7,7 @@ build = "build.rs"
 
 [dependencies]
 zmq = {version="0.9", features=["vendored"]}
-protobuf = "2.8"
+protobuf = "3.7"
 
 [build-dependencies]
 protoc-rust = "2.8"
